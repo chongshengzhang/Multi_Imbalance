@@ -5,6 +5,8 @@ Our implementations of the Multi-class Imbalance learning algorithms (for the KB
 
 *Note:The users should run these codes in the Windows Operating Systems. If you run the codes with Mac OSx, there will be problems with the LibSVM software package we have included. Thus we suggest the readers to use the Windows OS. 
 
+*If you have any problems, please do not hesitate to send us an email: 2834335964@qq.com; henucs@qq.com
+
 Before running the program, please add the folder 'test' and all subfolders to the path.
 
 (1). The folder 'codeBoost' contains 5 Boosting methods：AdaBoost.M1, AdaC2.M1, SAMME, AdaBoost.NC, PIBoost
