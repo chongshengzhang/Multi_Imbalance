@@ -1,25 +1,26 @@
 # Multi_Imbalance
 Our implementations of the Multi-class Imbalance learning algorithms (for the KBS paper)
 
-The main contributor of these implementations is Ms. Jingjun Bi.  
+# The main contributor of these implementations is Ms. Jingjun Bi.  
+# The users should run these codes in the Windows Operating Systems. If you run the codes with Mac OSx, there will be problems with the LibSVM software package we have included. Thus we suggest the readers to use the Windows OS. 
 
-Before running the program, add the folder 'test' and all subfolders to the path.
+Before running the program, please add the folder 'test' and all subfolders to the path.
 
-The folder 'codeBoost' contains 5 Boosting methods：AdaBoost.M1, AdaC2.M1, SAMME, AdaBoost.NC, PIBoost
+(1). The folder 'codeBoost' contains 5 Boosting methods：AdaBoost.M1, AdaC2.M1, SAMME, AdaBoost.NC, PIBoost
 
-The folder 'codeDOVO' contains algorithm DOVO
+(2). The folder 'codeDOVO' contains algorithm DOVO
 
-The folder 'codeHDDT' contains 3 methods: MC-HDDT, HDDT+ECOC, HDDT+OVA
+(3). The folder 'codeHDDT' contains 3 methods: MC-HDDT, HDDT+ECOC, HDDT+OVA
 
-The folder 'codeimECOC' contains 3 methods: imECOC+sparse, imECOC+dense, imECOC+OVA
+(4). The folder 'codeimECOC' contains 3 methods: imECOC+sparse, imECOC+dense, imECOC+OVA
 
-The folder 'codeMultiIM' contains 4 methods: Multi-IM+OVO, Multi-IM+A&O, Multi-IM+OAHO, Multi-IM+OVA
+(5). The folder 'codeMultiIM' contains 4 methods: Multi-IM+OVO, Multi-IM+A&O, Multi-IM+OAHO, Multi-IM+OVA
 
-The folder 'codeDECOC' contains algorithm DECOC
+(6). The folder 'codeDECOC' contains algorithm DECOC
 
-The folder 'codeFuzzyImb' contains algorithm IFROWANN+ECOC
+(7). The folder 'codeFuzzyImb' contains algorithm IFROWANN+ECOC
 
-A total of 18 algorithms
+A total of 18 algorithms. 
 
 
 The folder 'data' is the experimental datasets, and each experiment is carried out using 5-fold cross validation
