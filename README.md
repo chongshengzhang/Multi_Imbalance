@@ -2,7 +2,8 @@
 Our implementations of the Multi-class Imbalance learning algorithms (for the KBS paper)
 
 # The main contributor of these implementations is Ms. Jingjun Bi.  
-# The users should run these codes in the Windows Operating Systems. If you run the codes with Mac OSx, there will be problems with the LibSVM software package we have included. Thus we suggest the readers to use the Windows OS. 
+
+*Note:The users should run these codes in the Windows Operating Systems. If you run the codes with Mac OSx, there will be problems with the LibSVM software package we have included. Thus we suggest the readers to use the Windows OS. 
 
 Before running the program, please add the folder 'test' and all subfolders to the path.
 
