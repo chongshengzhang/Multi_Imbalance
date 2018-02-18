@@ -7,7 +7,7 @@ Our implementations of the Multi-class Imbalance learning algorithms (for the KB
 
 *If you have any problems, please do not hesitate to send us an email: 2834335964@qq.com; henucs@qq.com
 
-Before running the program, please add the folder 'test' and all subfolders to the path.
+Before running the software, please add the folder 'test' and all subfolders to the path.
 
 (1). The folder 'codeBoost' contains 5 Boosting methods：AdaBoost.M1, AdaC2.M1, SAMME, AdaBoost.NC, PIBoost
 
