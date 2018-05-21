@@ -22,17 +22,21 @@ Please cite the following two papers:
 -To DO
 
 
-*If you have any problems, please do not hesitate to send us an email: 2834335964@qq.com; henucs@qq.com
+*If you have any problems, please do not hesitate to send us an email: henucs@qq.com
 
 # (1) Installation
+
 Software Environments: Please first install and use the Matlab or OCTAVE softwares. 
+
 Please download the software to your local disk, then add the folder 'Multi_Imbalance' and all subfolders to the path of Matlab or OCTAVE.
 
 * The users can run these codes in the Windows Operating Systems or Mac OSx. 
+
 * If you run the codes with Mac OSx, there will be issues with the LibSVM software package we have included. In this case, users just ignore (stop using) LibSVM.
 
 
 # (2) Software Contents
+
 The folder 'Boost' contains a class of 5 Boosting methods: AdaBoost.M1, AdaC2.M1, SAMME, AdaBoost.NC, PIBoost).
 
 The folder 'DECOC' contains algorithm DECOC.
@@ -49,6 +53,7 @@ The folder 'MultiIM' contains a class of 4 methods: Multi-IM+OVO, Multi-IM+A&O, 
 
 
 In total,  18 algorithms for multi-class imbalance learning.
+
 (Note that we also include the 19th algorithm CART as the baseline method, but CART is not towards imbalance learning.)
 
 
@@ -59,6 +64,7 @@ The folder 'results' are the experimental results, '_c.mat' is time consuming, a
 The file 'testall.m' is an example of all the methods tested, a total of 19 methods including the above 18 algorithms and the base classifier CART. 
 
 Input: data(d).train, data(d).trainlabel, data(d).test, training labels, test data matrix  (the training data and testing data matrix)
+
 Output:Cost(d).NAME, Pre(d).NAME, prediction labels (---time consumptions)
 
 In the following, we will give details of these 18 major algorithms for multi-class imbalance learning.
@@ -72,7 +78,7 @@ There are 7 classes (categories) of algorithms for multi-class imbalance learnin
 In total, there are 18 major algorithms for multi-class imbalance learning.
 
 In the following, we give the user manual of these 18 major algorithms for multi-class imbalance learning.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
