@@ -21,7 +21,7 @@ Please cite the following two papers:
  Learning Algorithms and A New Diversified Ensemble Learning Scheme.
  Knowledge-based Systems, 2018, Vol. XXX, pp. XXX.
 
--To DO
+-To add Our coming KBS Open Software Paper.
 
 
 *If you have any problems, please do not hesitate to send us an email: henucs@qq.com
@@ -102,7 +102,7 @@ In the following, we give the user manual of these 18 major algorithms for multi
 % of samples’ weights and the classifier combination strategy. The main difference between them is the method
 
 % for updating the weights of the samples.
-%
+
 % (1) AdaBoost.M1. The main steps of AdaBoost.M1 are as follows:
 
 % Step 1: Initialize the weight Vector with uniform distribution
@@ -123,13 +123,11 @@ In the following, we give the user manual of these 18 major algorithms for multi
 
 % Step 9: Output Final Classifier
 
-%
 % Reference for AdaBoost.M1:
 
 % Freund, Y. & Schapire, R. E. (1997). A decision-theoretic generalization of on-line learning and an
   application to boosting. Journal of Computer and System Sciences, August 1997, 55(1).
 
-%
 %
 
 % (2) SAMME. The main procedure (steps) of the SAMME algorithm:
@@ -152,12 +150,10 @@ In the following, we give the user manual of these 18 major algorithms for multi
 
 % Step 9: Output Final Classifier
 
-%
 % Reference for SAMME:
 
 % Zhu, J., Zou, H., Rosset, S., et al. (2006). Multi-class AdaBoost. Statistics & Its Interface,
   2006, 2(3), 349-360.
-%
 
 % (3) AdaC2.M1 (adaC2cartM1). It derives the best cost setting through the genetic algorithm (GA) method, then
 
@@ -167,37 +163,31 @@ In the following, we give the user manual of these 18 major algorithms for multi
 
 % excellent performance in finding the best parameters.
 
-%
 % Reference for AdaC2.M1:
 
 % Sun, Y., Kamel, M. S. & Wang, Y. (2006). Boosting for learning multiple classes with imbalanced class
   distribution. Proceedings of the 6th International Conference on Data Mining, 2006 (PP. 592-602).
   
-%
 % (4) AdaBoost.NC. Since GA is very time consuming, in the above reference, the authors propose AdaBoost.NC which
 
 % deprecates the GA algorithm, but emphasizes ensemble diversity during training, and exploits its
 
 % good generalization performance to facilitate class imbalance learning.
 
-%
 % Reference for AdaBoost.NC:
 
 % Wang, S., Chen, H. & Yao, X. Negative correlation learning for classification ensembles. Proc. Int. Joint
   Conf. Neural Netw., 2010 (PP. 2893-2900).
-%
 
 % (5) PIBoost. It combines binary weak-learners to separate groups of classes, and uses a margin-based
 
 % exponential loss function to classify multi-class imbalanced data.
 
-%
 % Reference for PIBoost:
 
 % Fernndez, B. A. & Baumela. L. (2014). Multi-class boosting with asymmetric binary weak-learners. 
   Pattern Recognition, 2014, 47(5), PP. 2080-2090.
   
-%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 # 1.1 AdaBoost.M1
@@ -286,19 +276,17 @@ In the following, we give the user manual of these 18 major algorithms for multi
      (This algorithm is our proposed ensemble approach for imbalance learning, DOVO+imECOC)
 
 % This algorithm is under the folder "DECOC".
-%
-%
+
 % Reference (we propose and implement the following algorithm):
 
 %   Jingjun Bi, Chongsheng Zhang*. (2018). An Empirical Comparison on State-of-the-art Multi-class Imbalance
     Learning Algorithms and A New Diversified Ensemble Learning Scheme.
     Knowledge-based Systems, 2018, Vol. XXX, pp. XXX.
-%
 
 %(1) Using funclassifierDECOC, DECOC uses ECOC strategy to tranform the multi-class data into multiple binary data,
 
 %    then finds the best classifier for each specific binaried data, which will be kept by ft.
-%
+
 %(2) Using funcwEDOVO, it builds the best classifier for each binarized data (by ECOC) and the predictions are in allpre.
 
 %    Notice that, in this function, it has duplicates with funclassifierDECOC, in building the best classification
@@ -309,11 +297,10 @@ In the following, we give the user manual of these 18 major algorithms for multi
 
 %    This is for the traning data.
 
-%
+
 %(3) With funcpretestEDOVO  to make the predictions on the test data, using the imECOC algorithm. 
 
-%
-%
+
 # 2.1 DECOC
     % The main function is: DECOC()
     % The principles and procedure (and the rational) of this algorithm are explained/given in DECOC.m.
@@ -338,14 +325,10 @@ In the following, we give the user manual of these 18 major algorithms for multi
 
 % This algorithm is under the folder "DOVO".
 
-%
-%
 
 % Reference (we implement the following algorithm):
   Kang, S., Cho, S. & Kang P. (2015) Constructing a multi-class classifier using one-against-one approach
-   with different binary classifiers. Neurocomputing, 2015, Vol. 149, pp. 677-682.
-   
-% 
+   with different binary classifiers. Neurocomputing, 2015, Vol. 149, pp. 677-682. 
 
 % The main idea of this algorithm:
 
@@ -371,7 +354,6 @@ In the following, we give the user manual of these 18 major algorithms for multi
 
 %       prediction for every instance in the test data. 
 
-%
 # 3.1 DOVO
     % The main function is: DOVO()
     % The principles and procedure (and the rational) of this algorithm are explained/given in DOVO.m.
@@ -395,26 +377,24 @@ In the following, we give the user manual of these 18 major algorithms for multi
 
 % This algorithm is under the folder "fuzzyImbECOC".
 
-%
+
 
 % Reference: E. Ramentol, S. Vluymans, N. Verbiest, et al. , IFROWANN: Imbalanced Fuzzy-Rough Ordered Weighted
              Average Nearest Neighbor Classification, IEEE Transactions on Fuzzy Systems 23 (5) (2015) 1622-1637.
-%
+
 % Note 1: We obtain the codes of IFROWANN (fuzzyImb) from the authors, we greatly acknowledge their help and contributions;
 
 % Note 2: IFROWANN was originally designed for binary imbalanced data.
 
 %         In this work, we extend IFROWANN with the ECOC encoding strategy to handle multi-class imbalanced data.
 
-%
+
 %(1) using funECOC(), it first generates the ECOC matrix (with each codeword for a specific class).
 
 %    each class will be represented by an array of codes such as 1 1 -1 -1 1 -1.
-%
 
 %(2) it then extracts the instances (and the corresponding labels) of each original class, keep in train{i};
 
-%
 %(3) the ECOC matrix for all the classes is an nc*number1 matrix, each row represents the codeword of one class.
 
 %    a)  for each column of the ECOC matrix, first retrieve the corresponding bit value of each class.
@@ -428,14 +408,13 @@ In the following, we give the user manual of these 18 major algorithms for multi
 
 %    at the end, we will train a few binary classifiers.
 
-%
+
 %    c)  for each test instance from testdata, use all the classifiers obtained from b) to make predictions;
 
 %    their predicitions will be  combined as an array, 
 
 %    then use the ECOC decoding method to find the nearest ECOC codeword, then the  corresponding class label.
 
-%
 # 4.1 fuzzyImbECOC
     % The main function is: fuzzyImbECOC()
     % The principles and procedure (and the rational) of this algorithm are explained/given in fuzzyImbECOC.m.
@@ -466,7 +445,6 @@ In the following, we give the user manual of these 18 major algorithms for multi
   Hoens, T. R., Qian, Q., Chawla, N. V., et al. (2012). Building decision trees for the multi-class imbalance problem.   
   Advances in Knowledge Discovery and Data Mining. Springer Berlin Heidelberg, 2012 (PP. 122-134).
   
-%
 % HDDTova, Decomposition Techniques OVA + HDDT, for multi-class imbalanced data.
 
 % This is our own extension of HDDT to multi-class imbalanced data.
@@ -480,7 +458,7 @@ In the following, we give the user manual of these 18 major algorithms for multi
 % It must be noted that the decoding strategy for testHDDTecoc and testHDDTova are identical,
 
 % for fair comparisons between them.
-%
+
 % HDDTecoc, Decomposition Techniques ECOC + HDDT, for multi-class imbalanced data.
 
 % This is our own extension of HDDT to multi-class imbalanced data, using the ECOC approach.
@@ -495,7 +473,6 @@ In the following, we give the user manual of these 18 major algorithms for multi
 
 % for fair comparisons between them.
 
-%
 % MCHDDT, the Multi-Class HDDT method, successively takes one or a pair of classes as the positive class and the
 
 % rest as negative class, when calculating the Hellinger distance for each feature. It next selects the
@@ -506,7 +483,6 @@ In the following, we give the user manual of these 18 major algorithms for multi
 
 % Then, after determining the best split feature, it recursively build the child trees.
 
-%
 % It should be noted that, the Principles of HDDT are described as follows:
 
 % The Hellinger distance decision trees (HDDT) method is a classification algorithm based on decision trees
@@ -519,8 +495,6 @@ In the following, we give the user manual of these 18 major algorithms for multi
 
 % denotes the number of positive (negative) examples with the j-th value of the current feature.
 
-% 
-%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 # 5.1 HDDTova
@@ -559,7 +533,7 @@ In the following, we give the user manual of these 18 major algorithms for multi
 			
     % Usage for MCHDDT:
 		
-   for d=1:5
+    for d=1:5
   
         [Cost(d).MCHDDTtr,Cost(d).MCHDDTte,Pre(d).MCHDDT] = MCHDDT(data(d).train,data(d).trainlabel,data(d).test,data(d).testlabel);
     
@@ -577,14 +551,13 @@ In the following, we give the user manual of these 18 major algorithms for multi
 
 % These 3 algorithms are under the folder "imECOC".
 
-%
 % Reference:
 
 % Liu, X. Y., Li, Q. Q. & Zhou Z H. (2013). Learning imbalanced multi-class data with optimal dichotomy
   weights. IEEE 13th International Conference on Data Mining (IEEE ICDM), 2013 (PP.  478-487). 
 
 see http://cs.nju.edu.cn/_upload/tpl/01/0b/267/template267/zhouzh.files/publication/icdm13imECOC.pdf
-%
+
 
 % The imECOC algorithm includes the following techniques:
 
@@ -600,15 +573,12 @@ see http://cs.nju.edu.cn/_upload/tpl/01/0b/267/template267/zhouzh.files/publicat
 
 %     classifier by minimizing the weighted loss.  see function funcpre().
 
-%
-
 % In our implementations, Sparse, Dense, OVA are the 3 different coding methods for ECOC, 
 
 % OVA is actually a special case of ECOC. 
 
 % Actually, ECOC has many other coding strategies.
 
-% 
 
 % It should be noted that,
 
@@ -621,13 +591,11 @@ see http://cs.nju.edu.cn/_upload/tpl/01/0b/267/template267/zhouzh.files/publicat
 % distance) between various classes, thus transforms the classes of the multi-class data into c codewords 
 
 (when using OVA as the encoding method).
-
-%   
+   
 % In the testing phase, 
 
 % ECOC uses these c classifiers to respectively predict the test sample, then obtains a combined output. 
 
-%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 # 6.1 imECOC+sparse
@@ -684,14 +652,11 @@ see http://cs.nju.edu.cn/_upload/tpl/01/0b/267/template267/zhouzh.files/publicat
 
 % These 4 algorithms are under the folder "MultiIM".
 
-%
-
 % Reference:
 
   Ghanem, A. S., Venkatesh, S. & West, G. (2010). Multi-class pattern classification in imbalanced data.
   International Conference on Pattern Recognition (ICPR), 2010 (PP. 2881-2884).
   
-%
 
 % PRMs-IM is a classification algorithm (originally designed) for binary imbalanced data.
 
@@ -703,23 +668,18 @@ see http://cs.nju.edu.cn/_upload/tpl/01/0b/267/template267/zhouzh.files/publicat
 
 % to ensemble the outputs of the m classifiers and makes the final prediction.
 
-%
 
 % The above Reference (the above paper) proposes the Multi-IM algorithm which 
 
 % combines A&O and PRMs-IM, where PRMs-IM is adopted to train the classifier for A&O.
 
-%
 % Besides A&O, in our work, we also combine the OVA, OVO and OAHO decomposition methods
 
 % with PRMs-IM to further investigate the performance of PRMs-IM for multi-class imbalance learning.
 
-%
-%
 
 % It should be noted that:
 
-%
 % OVA: One-vs-All, also known as ‘One-against-all’, is a relatively simple decomposition strategy. For each class
 
 (category), it labels this class as a ‘positive class’ 
@@ -732,7 +692,7 @@ classification is transformed into multiple
 
 learnt. 
 
-%
+
 % OVO: the One-vs-One decomposition strategy first selects a subset from the original data that only contains the instances
 
 for each pair of classes, then trains a 
@@ -740,6 +700,7 @@ for each pair of classes, then trains a
 % binary classifier for each pair of classes, hence a total of c (c-1) / 2 binary classifiers will be obtained. In the
 
 prediction phase, all the c (c-1) / 2 binary 
+
 % classifiers will be used to predict a new instance, and their corresponding predictions will be combined using certain
 
 rules to make the final prediction. 
@@ -750,7 +711,7 @@ rules to make the final prediction.
 
 % adopts the OVO classifier previously trained for the pair of classes containing c_i and c_j to make the final prediction.
 
-%
+
 % OAHO: One-Against-Higher-Order (OAHO) is a decomposition method specifically designed for imbalanced data. 
 
 % OAHO first sorts the class by the number of samples in descending order. Let the sorted classes being {C_1,C_2,…,C_k},
@@ -768,8 +729,7 @@ first classifier is used to predict the sample,
 
 make the prediction, and so on, until the final prediction result is obtained.
 
-%
-%
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 # 7.1 Muti-IM+OVA
