@@ -16,7 +16,9 @@ Implementations of 18 major (state-of-the-art) Multi-class Imbalance learning (I
         Prof. Chongsheng Zhang (henucs@qq.com) first.
 
 Please cite the following two papers:
--To DO 
+
+-To DO
+
 -To DO
 
 
