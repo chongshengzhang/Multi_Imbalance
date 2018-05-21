@@ -1,7 +1,7 @@
 # Multi_Imbalance
 Implementations of 18 major (state-of-the-art) Multi-class Imbalance learning (Imbalance Classification) algorithms.
 
-# Copyright: Jingjun Bi and Chongsheng Zhang.
+# Copyright: Jingjun Bi and Chongsheng Zhang (The Big Data Research Center, Henan University).
 
 *The two contributors of this open software for multi-class imbalance learning are  Ms. Jingjun Bi and Prof. Chongsheng Zhang (henucs@qq.com). 
 * Ms. Bi mainly contributes to the  implementations of these 18 algorithms; 
@@ -17,7 +17,9 @@ Implementations of 18 major (state-of-the-art) Multi-class Imbalance learning (I
 
 Please cite the following two papers:
 
--To DO
+-Jingjun Bi, Chongsheng Zhang*. (2018). An Empirical Comparison on State-of-the-art Multi-class Imbalance
+ Learning Algorithms and A New Diversified Ensemble Learning Scheme.
+ Knowledge-based Systems, 2018, Vol. XXX, pp. XXX.
 
 -To DO
 
@@ -125,51 +127,78 @@ In the following, we give the user manual of these 18 major algorithms for multi
 % Reference for AdaBoost.M1:
 
 % Freund, Y. & Schapire, R. E. (1997). A decision-theoretic generalization of on-line learning and an
-
-% application to boosting. Journal of Computer and System Sciences, August 1997, 55(1).
+  application to boosting. Journal of Computer and System Sciences, August 1997, 55(1).
 
 %
 %
+
 % (2) SAMME. The main procedure (steps) of the SAMME algorithm:
+
 % Step 1: Initialize the weight Vector with uniform distribution
+
 % Step 2: for t=1 to Max_Iter do
+
 % Step 3:    Fit a classifier nb to the training data using weights
+
 % Step 4:    Compute weighted error: errorRate=sum(weight(find(predicted~=trainlabel)));
+
 % Step 5:    Compute AlphaT=log((1-errorRate)/(errorRate+eps))+log(length(labels)-1)
+
 % Step 6:    Update weights weight(i)=weight(i)* exp( AlphaT(t));(trainlabel(i)~=predicted(i))
+
 % Step 7:    Re-normalize weight
+
 % Step 8: end for
+
 % Step 9: Output Final Classifier
+
 %
 % Reference for SAMME:
+
 % Zhu, J., Zou, H., Rosset, S., et al. (2006). Multi-class AdaBoost. Statistics & Its Interface,
-% 2006, 2(3), 349-360.
+  2006, 2(3), 349-360.
 %
+
 % (3) AdaC2.M1 (adaC2cartM1). It derives the best cost setting through the genetic algorithm (GA) method, then
+
 % takes this cost setting into consideration in the subsequent boosting. Genetic algorithm proposed by
+
 % Holland is based on natural selection and genetics of random search technology. GA can achieve
+
 % excellent performance in finding the best parameters.
+
 %
 % Reference for AdaC2.M1:
+
 % Sun, Y., Kamel, M. S. & Wang, Y. (2006). Boosting for learning multiple classes with imbalanced class
-% distribution. Proceedings of the 6th International Conference on Data Mining, 2006 (PP. 592-602).
+  distribution. Proceedings of the 6th International Conference on Data Mining, 2006 (PP. 592-602).
+  
 %
 % (4) AdaBoost.NC. Since GA is very time consuming, in the above reference, the authors propose AdaBoost.NC which
+
 % deprecates the GA algorithm, but emphasizes ensemble diversity during training, and exploits its
+
 % good generalization performance to facilitate class imbalance learning.
+
 %
 % Reference for AdaBoost.NC:
+
 % Wang, S., Chen, H. & Yao, X. Negative correlation learning for classification ensembles. Proc. Int. Joint
-% Conf. Neural Netw., 2010 (PP. 2893-2900).
+  Conf. Neural Netw., 2010 (PP. 2893-2900).
 %
+
 % (5) PIBoost. It combines binary weak-learners to separate groups of classes, and uses a margin-based
+
 % exponential loss function to classify multi-class imbalanced data.
+
 %
 % Reference for PIBoost:
+
 % Fernndez, B. A. & Baumela. L. (2014). Multi-class boosting with asymmetric binary weak-learners. 
-% Pattern Recognition, 2014, 47(5), PP. 2080-2090.
+  Pattern Recognition, 2014, 47(5), PP. 2080-2090.
+  
 %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 # 1.1 AdaBoost.M1
     % The main function is: adaboostcartM1()
@@ -184,7 +213,7 @@ In the following, we give the user manual of these 18 major algorithms for multi
     end
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 # 1.2 SAMME
     % The main function is: SAMMEcart()
@@ -199,7 +228,7 @@ In the following, we give the user manual of these 18 major algorithms for multi
     end
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 # 1.3 AdaC2.M1
     % The main function is: adaC2cartM1()
@@ -217,7 +246,7 @@ In the following, we give the user manual of these 18 major algorithms for multi
      
     end
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 # 1.4 AdaBoost.NC
     % The main function is: adaboostcartNC()
@@ -232,7 +261,7 @@ In the following, we give the user manual of these 18 major algorithms for multi
     end
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 # 1.5 PIBoost
     % The main function is: PIBoostcart()
@@ -250,7 +279,7 @@ In the following, we give the user manual of these 18 major algorithms for multi
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 # 2. DECOC 
@@ -260,9 +289,10 @@ In the following, we give the user manual of these 18 major algorithms for multi
 %
 %
 % Reference (we propose and implement the following algorithm):
+
 %   Jingjun Bi, Chongsheng Zhang*. (2018). An Empirical Comparison on State-of-the-art Multi-class Imbalance
-%   Learning Algorithms and A New Diversified Ensemble Learning Scheme.
-%   Knowledge-based Systems, 2018, Vol. XXX, pp. XXX.
+    Learning Algorithms and A New Diversified Ensemble Learning Scheme.
+    Knowledge-based Systems, 2018, Vol. XXX, pp. XXX.
 %
 %(1) Using funclassifierDECOC, DECOC uses ECOC strategy to tranform the multi-class data into multiple binary data,
 %    then finds the best classifier for each specific binaried data, which will be kept by ft.
@@ -288,7 +318,7 @@ In the following, we give the user manual of these 18 major algorithms for multi
       
     end
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -333,7 +363,7 @@ In the following, we give the user manual of these 18 major algorithms for multi
 
     end
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -382,7 +412,7 @@ In the following, we give the user manual of these 18 major algorithms for multi
       Cost(d).fuzzyw6=toc;
    end
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -427,7 +457,7 @@ In the following, we give the user manual of these 18 major algorithms for multi
 % denotes the number of positive (negative) examples with the j-th value of the current feature.
 % 
 %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 # 5.1 HDDTova
     % The main function is: HDDTova()
@@ -442,7 +472,7 @@ In the following, we give the user manual of these 18 major algorithms for multi
     end
 		
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
 
 # 5.2 HDDTecoc
     % The main function is: HDDTecoc()
@@ -457,7 +487,7 @@ In the following, we give the user manual of these 18 major algorithms for multi
     end
 		
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
 # 5.3 MCHDDT
     % The main function is: MCHDDT()
@@ -471,7 +501,7 @@ In the following, we give the user manual of these 18 major algorithms for multi
     
     end		
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -509,7 +539,7 @@ In the following, we give the user manual of these 18 major algorithms for multi
 % In the testing phase, 
 % ECOC uses these c classifiers to respectively predict the test sample, then obtains a combined output. 
 %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 # 6.1 imECOC+sparse
     % The main function is: imECOC()
@@ -524,7 +554,7 @@ In the following, we give the user manual of these 18 major algorithms for multi
     end
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
 
 # 6.2 imECOC+OVA
     % The main function is: imECOC()
@@ -539,7 +569,7 @@ In the following, we give the user manual of these 18 major algorithms for multi
     end
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
 		
 # 6.3 imECOC+dense
     % The main function is: imECOC()
@@ -553,7 +583,7 @@ In the following, we give the user manual of these 18 major algorithms for multi
     
     end
 		
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -604,7 +634,7 @@ In the following, we give the user manual of these 18 major algorithms for multi
 % final prediction result is obtained.
 %
 %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 # 7.1 Muti-IM+OVA
     % The main function is: classOVA()
@@ -618,7 +648,7 @@ In the following, we give the user manual of these 18 major algorithms for multi
      
     end
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
 
 # 7.2 Muti-IM+OVO
     % The main function is: classOAO()
@@ -632,7 +662,7 @@ In the following, we give the user manual of these 18 major algorithms for multi
     
     end
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 # 7.3 Muti-IM+OAHO
     % The main function is: classOAHO()
@@ -646,7 +676,7 @@ In the following, we give the user manual of these 18 major algorithms for multi
       
     end
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 # 7.4 Muti-IM+A&O
     % The main function is: classAandO()
@@ -660,7 +690,7 @@ In the following, we give the user manual of these 18 major algorithms for multi
       
     end
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 This is the END. Thank you so much.
-
+Prof.Chongsheng Zhang (henucs@qq.com), The Big Data Research Center, Henan University.
