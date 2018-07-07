@@ -19,7 +19,7 @@ Please cite the following two papers:
 
 -Jingjun Bi, Chongsheng Zhang*. (2018). An Empirical Comparison on State-of-the-art Multi-class Imbalance
  Learning Algorithms and A New Diversified Ensemble Learning Scheme.
- Knowledge-based Systems, 2018, Vol. XXX, pp. XXX.
+ Knowledge-based Systems, 2018, Vol. 158, pp. 81-93.
 
 -To add Our coming KBS Open Software Paper.
 
@@ -789,4 +789,8 @@ make the prediction, and so on, until the final prediction result is obtained.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 This is the END. Thank you so much.
-Prof.Chongsheng Zhang (henucs@qq.com), The Big Data Research Center, Henan University.
+
+
+Prof.Chongsheng Zhang (henucs@qq.com), 
+
+The Big Data Research Center, Henan University.
