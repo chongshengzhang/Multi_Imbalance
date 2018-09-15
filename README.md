@@ -24,7 +24,7 @@ Please cite the following two papers:
 -To add Our coming KBS Open Software Paper.
 
 
-*If you have any problems, please do not hesitate to send us an email: henucs@qq.com
+*If you have any problems, please do not hesitate to send us an email: chongsheng.zhang@yahoo.com, or, henucs@qq.com. 
 
 # (1) Installation
 
