@@ -3,13 +3,13 @@ Implementations of 18 major (state-of-the-art) Multi-class Imbalance learning (I
 
 # Copyright: Jingjun Bi and Chongsheng Zhang (The Big Data Research Center, Henan University).
 
-*The two contributors of this open software for multi-class imbalance learning are  Ms. Jingjun Bi and Prof. Chongsheng Zhang (henucs@qq.com). 
+*The two contributors of this open software for multi-class imbalance learning are  Ms. Jingjun Bi and Prof. Chongsheng Zhang (chongsheng.zhang@yahoo.com, or, henucs@qq.com). 
 * Ms. Bi mainly contributes to the  implementations of these 18 algorithms; 
 * Prof.Zhang is the supervisor of Ms. Bi, he proposed the idea for this work, 
 * he also throughly investigated the state-of-the-art and guided Ms. Bi to implement these algorithms.
 * Moreover, Prof.Zhang made the majority annotations and the user manual for this software; 
 * he also writes the paper (with other co-authors) for the software.
-* Note: Anyone who use this software should refer to (should cite) the following two papers:
+* Note: Anyone who use this software should refer to (should cite) the following papers:
 * Note: This software is protected by the GNU General Public License (GPL). 
         For academic usage, the users should always cite the following two papers; 
         For commerical usage, the company or institution (and any project) must have the consent from 
@@ -791,6 +791,6 @@ make the prediction, and so on, until the final prediction result is obtained.
 This is the END. Thank you so much.
 
 
-Prof.Chongsheng Zhang (henucs@qq.com), 
+Prof.Chongsheng Zhang (chongsheng.zhang@yahoo.com, or, henucs@qq.com), 
 
 The Big Data Research Center, Henan University.
