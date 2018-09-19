@@ -16,9 +16,7 @@ dataset_list = {'Wine_data_set_indx_fixed'};
 
 
 for p = 1:length(dataset_list)%1:numel(dataset_list)
-    cd ..
     load(['data\', dataset_list{p},'.mat']);
-    cd test
     disp([dataset_list{p}, ' - numero dataset: ',num2str(p), ]);
     
     %     funzione_n = 'DOAO';
