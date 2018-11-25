@@ -338,15 +338,15 @@ Step 3. the ECOC matrix for all the classes is an nc*number1 matrix, each row re
   
 **(1)HDDTova**
 
-*HDDTova is HDDT plus the decomposition technique OVA for multi-class imbalanced data. It is our own extension of HDDT to multi-class imbalanced data. HDDTova builds numberc of binary HDDT classifiers by combining the OVA strategy and HDDT, then combines the outputs of different binary HDDT classifiers generated using the OVA strategy. Here, the decoding strategy for OVA is the same as the imECOC decoding. It must be noted that the decoding strategy for testHDDTecoc and testHDDTova are identical, for fair comparisons between them.
+*HDDTova is HDDT plus the decomposition technique OVA for multi-class imbalanced data. It is our own extension of HDDT to multi-class imbalanced data. HDDTova builds numberc of binary HDDT classifiers by combining the OVA strategy and HDDT, then combines the outputs of different binary HDDT classifiers generated using the OVA strategy. Here, the decoding strategy for OVA is the same as the imECOC decoding. It must be noted that the decoding strategy for testHDDTecoc and testHDDTova are identical, for fair comparisons between them.*
 
 **(2)HDDTecoc**
 
-*HDDTecoc is HDDT plus the decomposition technique ECOC for multi-class imbalanced data. It builds number1 of binary HDDT classifiers by combining the ECOC strategy and HDDT. Then combines the outputs of different binary HDDT classifiers generated using the ECOC strategy.
+*HDDTecoc is HDDT plus the decomposition technique ECOC for multi-class imbalanced data. It builds number1 of binary HDDT classifiers by combining the ECOC strategy and HDDT. Then combines the outputs of different binary HDDT classifiers generated using the ECOC strategy.*
 
 **(3)MCHDDT**
 
-*MCHDDT, the Multi-Class HDDT method, successively takes one or a pair of classes as the positive class and the rest as negative class, when calculating the Hellinger distance for each feature. It next selects the maximum Hellinger value for this feature. Finally, it obtains the maximum Hellinger value for each feature, then the feature with maximum Hellinger distance will be used to split the node. Then, after determining the best split feature, it recursively build the child trees. 
+*MCHDDT, the Multi-Class HDDT method, successively takes one or a pair of classes as the positive class and the rest as negative class, when calculating the Hellinger distance for each feature. It next selects the maximum Hellinger value for this feature. Finally, it obtains the maximum Hellinger value for each feature, then the feature with maximum Hellinger distance will be used to split the node. Then, after determining the best split feature, it recursively build the child trees.*
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
