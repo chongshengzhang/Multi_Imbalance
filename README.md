@@ -55,7 +55,7 @@ In total, there are 18 major algorithms for multi-class imbalance learning.
 **data(d).train, data(d).trainlabel, data(d).test**
 
 *data(d).train and data(d).trainlabel are the training data matrix and the correponding lables, data(d).test is testing data matrix.*
-
+<br />
 **Output**:
 **Cost(d).NAME, Pre(d).NAME**
 
@@ -224,7 +224,7 @@ PIBoost combines binary weak-learners to separate groups of classes, and uses a 
 
 
 # 2. DECOC 
-*This algorithm is our proposed ensemble approach for imbalance learning, DOVO+imECOC).*
+*This algorithm is our proposed ensemble approach for imbalance learning, DOVO+imECOC.*
 
 *Reference of DECOC: Jingjun Bi, Chongsheng Zhang*. (2018). An Empirical Comparison on State-of-the-art Multi-class Imbalance  Learning Algorithms and A New Diversified Ensemble Learning Scheme.  Knowledge-based Systems, 2018.*
 
