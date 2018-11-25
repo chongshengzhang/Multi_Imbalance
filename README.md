@@ -40,7 +40,7 @@ The software has 9 major folders which are described below.
 
  <br />
  
-*In total,  18 algorithms for multi-class imbalance learning. Note that we also include the 19th algorithm CART as the baseline method, but CART is not towards imbalance learning. The file 'testall.m' is an example of all the methods tested, a total of 19 methods including the above 18 algorithms and the base classifier CART.* 
+In total,  18 algorithms for multi-class imbalance learning. Note that we also include the 19th algorithm CART as the baseline method, but CART is not towards imbalance learning. The file 'testall.m' is an example of all the methods tested, a total of 19 methods including the above 18 algorithms and the base classifier CART.
 
  <br />
  
