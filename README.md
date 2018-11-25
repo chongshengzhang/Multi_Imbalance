@@ -3,7 +3,7 @@
 
 ###### Copyright: Jingjun Bi and Chongsheng Zhang (The Big Data Research Center, Henan University).
 
-###### The two contributors of this open software for multi-class imbalance learning are  Ms. Jingjun Bi and Prof. Chongsheng Zhang (chongsheng.zhang@yahoo.com). If you have any problems, please do not hesitate to send us an email: chongsheng.zhang@yahoo.com. 
+###### The two contributors of this open software for multi-class imbalance learning are  Ms. Jingjun Bi and Prof. Chongsheng Zhang (chongsheng.zhang@yahoo.com). If you have any problems, please do not hesitate to send us an email. 
 
 # (1) Installation
 
