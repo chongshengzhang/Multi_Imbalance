@@ -34,7 +34,7 @@
 
  <br />
  
-###### In total,  18 algorithms for multi-class imbalance learning. Note that we also include the 19th algorithm CART as the baseline method, but CART is not towards imbalance learning.
+In total,  18 algorithms for multi-class imbalance learning. Note that we also include the 19th algorithm CART as the baseline method, but CART is not towards imbalance learning.
  <br />
  
 - The folder 'data' is the experimental datasets, and each experiment is carried out using 5-fold cross validation. 
