@@ -51,6 +51,8 @@ In total, there are 18 major algorithms for multi-class imbalance learning.
 
 **The inputs and outputs for these 18 algorithms are the same.**
 
+<br />
+
 **Input**:
 **data(d).train, data(d).trainlabel, data(d).test**
 
