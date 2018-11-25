@@ -30,12 +30,13 @@
 
 6. The folder 'imECOC' contains a class of 3 methods: imECOC+sparse, imECOC+dense, imECOC+OVA.
 
-7. The folder 'MultiIM' contains a class of 4 methods: Multi-IM+OVO, Multi-IM+A&O, Multi-IM+OAHO, Multi-IM+OVA.
+7. The folder 'MultiIM' contains a class of 4 methods: Multi-IM+OVO, Multi-IM+A&O, Multi-IM+OAHO, Multi-IM+OVA.  
 
+ <br />
+ <br />
+In total,  18 algorithms for multi-class imbalance learning.  <br />
 
-In total,  18 algorithms for multi-class imbalance learning.
-
-(Note that we also include the 19th algorithm CART as the baseline method, but CART is not towards imbalance learning.)
+(Note that we also include the 19th algorithm CART as the baseline method, but CART is not towards imbalance learning.)  <br />
 
 
 - The folder 'data' is the experimental datasets, and each experiment is carried out using 5-fold cross validation. 
@@ -44,12 +45,13 @@ In total,  18 algorithms for multi-class imbalance learning.
 
 - The file 'testall.m' is an example of all the methods tested, a total of 19 methods including the above 18 algorithms and the base classifier CART. 
 
+ <br />
+ <br />
 **Input**: data(d).train, data(d).trainlabel, data(d).test, training labels, test data matrix  (the training data and testing data matrix)
 
 **Output**:Cost(d).NAME, Pre(d).NAME, prediction labels (---time consumptions)
-
+ <br />
 In the following, we will give details of these 18 major algorithms for multi-class imbalance learning.
-
 
 
 # (3) Software Usage Manual
