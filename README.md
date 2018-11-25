@@ -1,30 +1,9 @@
 # Multi_Imbalance
-Implementations of 18 major (state-of-the-art) Multi-class Imbalance learning (Imbalance Classification) algorithms.
+**Implementations of 18 major (state-of-the-art) Multi-class Imbalance learning (Imbalance Classification) algorithms.**
 
-# Copyright: Jingjun Bi and Chongsheng Zhang (The Big Data Research Center, Henan University).
+###### Copyright: Jingjun Bi and Chongsheng Zhang (The Big Data Research Center, Henan University).
 
-*The two contributors of this open software for multi-class imbalance learning are  Ms. Jingjun Bi and Prof. Chongsheng Zhang (chongsheng.zhang@yahoo.com, or, henucs@qq.com). 
-* Ms. Bi mainly contributes to the  implementations of these 18 algorithms; 
-* Prof.Zhang is the supervisor of Ms. Bi, he proposed the idea for this work, 
-* he also throughly investigated the state-of-the-art and guided Ms. Bi to implement these algorithms.
-* Moreover, Prof.Zhang made the majority annotations and the user manual for this software; 
-* he also writes the paper (with other co-authors) for the software.
-* Note: Anyone who use this software should refer to (should cite) the following papers:
-* Note: This software is protected by the GNU General Public License (GPL). 
-        For academic usage, the users should always cite the following two papers; 
-        For commerical usage, the company or institution (and any project) must have the consent from 
-        Prof. Chongsheng Zhang (henucs@qq.com) first.
-
-Please cite the following two papers:
-
--Jingjun Bi, Chongsheng Zhang*. (2018). An Empirical Comparison on State-of-the-art Multi-class Imbalance
- Learning Algorithms and A New Diversified Ensemble Learning Scheme.
- Knowledge-based Systems, 2018, Vol. 158, pp. 81-93.
-
--To add Our coming KBS Open Software Paper.
-
-
-*If you have any problems, please do not hesitate to send us an email: chongsheng.zhang@yahoo.com, or, henucs@qq.com. 
+###### The two contributors of this open software for multi-class imbalance learning are  Ms. Jingjun Bi and Prof. Chongsheng Zhang (chongsheng.zhang@yahoo.com). If you have any problems, please do not hesitate to send us an email: chongsheng.zhang@yahoo.com. 
 
 # (1) Installation
 
