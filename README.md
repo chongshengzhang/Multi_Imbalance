@@ -7,13 +7,13 @@
 
 # (1) Installation
 
-Software Environments: Please first install and use the Matlab or OCTAVE softwares. 
+1. Software Environments: Please first install and use the Matlab or OCTAVE softwares. 
 
-Please download the software to your local disk, then add the folder 'Multi_Imbalance' and all subfolders to the path of Matlab or OCTAVE.
+2. Please download the software to your local disk, then add the folder 'Multi_Imbalance' and all subfolders to the path of Matlab or OCTAVE.
 
-* The users can run these codes in the Windows Operating Systems or Mac OSx. 
+* The users can run these codes in the Windows Operating Systems or Mac OSx. *
 
-* If you run the codes with Mac OSx, there will be issues with the LibSVM software package we have included. In this case, users just ignore (stop using) LibSVM.
+* If you run the codes with Mac OSx, there will be issues with the LibSVM software package we have included. In this case, users just ignore (stop using) LibSVM. *
 
 
 # (2) Software Contents
