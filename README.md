@@ -75,7 +75,11 @@ In total, there are 18 major algorithms for multi-class imbalance learning.
 
 
   *These 5 algorithms are under the folder "Boost", all of them are variants of Boost/AdaBoost.  AdaBoost (Adaptive Boosting) is a binary classification algorithm proposed by Freund and Schapire that integrates multiple weak classifiers to build a stronger classifier. AdaBoost only supports binary data in the beginning, but it was later extended to multi-class scenarios. AdaBoost.M1 and SAMME (Stagewise Additive Modeling using a Multi-class Exponential loss function) have extended AdaBoost in both the update of samples’ weights and the classifier combination strategy. The main difference between them is the method  for updating the weights of the samples.*
-	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+# Principles
+
 **(1) AdaBoost.M1.** 
    
    The main steps of AdaBoost.M1 are as follows:
@@ -232,6 +236,11 @@ PIBoost combines binary weak-learners to separate groups of classes, and uses a 
 
 *Reference of DECOC: Jingjun Bi, Chongsheng Zhang*. (2018). An Empirical Comparison on State-of-the-art Multi-class Imbalance  Learning Algorithms and A New Diversified Ensemble Learning Scheme.  Knowledge-based Systems, 2018.*
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+# Principles
+
 Our DECOC algorithm contains the following steps:
 
 Step 1: DECOC first uses ECOC strategy to tranform the multi-class data into multiple binary data, then finds the best classifier for each specific binaried data, which will be kept by ft.
@@ -264,6 +273,11 @@ Step 3: With funcpretestEDOVO, DECOC makes the predictions on the test data, usi
      (This algorithm is an ensemble based approach for imbalance learning)
 
 *Reference (we implement the following algorithm): Kang, S., Cho, S. & Kang P. (2015) Constructing a multi-class classifier using one-against-one approach with different binary classifiers. Neurocomputing, 2015, Vol. 149, pp. 677-682.* 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+# Principles
 
 The main idea of this algorithm:
 
@@ -300,6 +314,11 @@ Step 5.  in the prediction phase, see funcPre.m, all the nc*(nc-1)/2 classificat
 *Reference: E. Ramentol, S. Vluymans, N. Verbiest, et al. , IFROWANN: Imbalanced Fuzzy-Rough Ordered Weighted Average Nearest Neighbor Classification, IEEE Transactions on Fuzzy Systems 23 (5) (2015) 1622-1637.*
 
 *We obtain the codes of IFROWANN (fuzzyImb) from the authors, we greatly acknowledge their help and contributions. It was originally designed for binary imbalanced data. In this work, we extend IFROWANN with the ECOC encoding strategy to handle multi-class imbalanced data.*
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+# Principles
 
 The main procedure of fuzzyImbECOC:
 
@@ -339,6 +358,11 @@ Step 3. the ECOC matrix for all the classes is an nc*number1 matrix, each row re
   *a class of 3 algorithms in total, all of which are variants of HDDT.*
 
 *Reference： Hoens, T. R., Qian, Q., Chawla, N. V., et al. (2012). Building decision trees for the multi-class imbalance problem.    Advances in Knowledge Discovery and Data Mining. Springer Berlin Heidelberg, 2012 (PP. 122-134).*
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+# Principles
   
 **(1)HDDTova**
 
@@ -406,6 +430,11 @@ Step 3. the ECOC matrix for all the classes is an nc*number1 matrix, each row re
 
 *Reference: Liu, X. Y., Li, Q. Q. & Zhou Z H. (2013). Learning imbalanced multi-class data with optimal dichotomy weights. IEEE 13th International Conference on Data Mining (IEEE ICDM), 2013 (PP.  478-487).*
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+# Principles
+
 The imECOC algorithm contains the following steps:
 
 Step 1. in each binary classifier, it simultaneously considers the between-class and the within-class imbalance; see function funclassifier();
@@ -469,6 +498,11 @@ Step 3. in the prediction phase, it decodes it with weighted distance to obtain 
   *a class of 4 algorithms in total, all of which are variants of Multi-IM.*
 
 *Reference: Ghanem, A. S., Venkatesh, S. & West, G. (2010). Multi-class pattern classification in imbalanced data. International Conference on Pattern Recognition (ICPR), 2010 (PP. 2881-2884).*
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+# Principles
 
 *PRMs-IM is a classification algorithm (originally designed) for binary imbalanced data. Let m be the ratio between the number of majority samples and that of the minority samples. PRMs-IM randomly divides the majority samples into m parts, next combines each part with all the minority instances, then trains a corresponding binary classifier.  In the prediction phase, it uses weighted voting to ensemble the outputs of the m classifiers and makes the final prediction.*
 
