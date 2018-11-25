@@ -55,7 +55,9 @@ In total, there are 18 major algorithms for multi-class imbalance learning.
 **data(d).train, data(d).trainlabel, data(d).test**
 
 *data(d).train and data(d).trainlabel are the training data matrix and the correponding lables, data(d).test is testing data matrix.*
+
 <br />
+
 **Output**:
 **Cost(d).NAME, Pre(d).NAME**
 
