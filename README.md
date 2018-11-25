@@ -33,8 +33,10 @@
 7. The folder 'MultiIM' contains a class of 4 methods: Multi-IM+OVO, Multi-IM+A&O, Multi-IM+OAHO, Multi-IM+OVA.  
 
  <br />
-######In total,  18 algorithms for multi-class imbalance learning. Note that we also include the 19th algorithm CART as the baseline method, but CART is not towards imbalance learning.
+ 
+###### In total,  18 algorithms for multi-class imbalance learning. Note that we also include the 19th algorithm CART as the baseline method, but CART is not towards imbalance learning.
  <br />
+ 
 - The folder 'data' is the experimental datasets, and each experiment is carried out using 5-fold cross validation. 
 
 - The folder 'results' are the experimental results, '_c.mat' is time consuming, and '_p.mat' is prediction labels.
