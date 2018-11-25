@@ -70,11 +70,10 @@ In total, there are 18 major algorithms for multi-class imbalance learning.
 # 1. Variants of AdaBoost for Multi-class Imbalance Learning 
 
 
-  These 5 algorithms are under the folder "Boost", all of them are variants of Boost/AdaBoost. 
-	
-  AdaBoost (Adaptive Boosting) is a binary classification algorithm proposed by Freund and Schapire that integrates multiple weak classifiers to build a stronger classifier. AdaBoost only supports binary data in the beginning, but it was later extended to multi-class scenarios. AdaBoost.M1 and SAMME (Stagewise Additive Modeling using a Multi-class Exponential loss function) have extended AdaBoost in both the update of samples’ weights and the classifier combination strategy. The main difference between them is the method  for updating the weights of the samples.
+  *These 5 algorithms are under the folder "Boost", all of them are variants of Boost/AdaBoost.  AdaBoost (Adaptive Boosting) is a binary classification algorithm proposed by Freund and Schapire that integrates multiple weak classifiers to build a stronger classifier. AdaBoost only supports binary data in the beginning, but it was later extended to multi-class scenarios. AdaBoost.M1 and SAMME (Stagewise Additive Modeling using a Multi-class Exponential loss function) have extended AdaBoost in both the update of samples’ weights and the classifier combination strategy. The main difference between them is the method  for updating the weights of the samples.*
 	
 **(1) AdaBoost.M1.** 
+   
    The main steps of AdaBoost.M1 are as follows:
 
    Step 1: Initialize the weight Vector with uniform distribution
@@ -123,22 +122,24 @@ In total, there are 18 major algorithms for multi-class imbalance learning.
    *Reference for SAMME:  Zhu, J., Zou, H., Rosset, S., et al. (2006). Multi-class AdaBoost. Statistics & Its Interface, 2006, 2(3), 349-360.*
 
  **(3) AdaC2.M1 (adaC2cartM1).**
+ 
  *AdaC2.M1 derives the best cost setting through the genetic algorithm (GA) method, then takes this cost setting into consideration in the subsequent boosting. Genetic algorithm proposed by Holland is based on natural selection and genetics of random search technology. GA can achieve excellent performance in finding the best parameters.*
 
  *Reference for AdaC2.M1: Sun, Y., Kamel, M. S. & Wang, Y. (2006). Boosting for learning multiple classes with imbalanced class
   distribution. Proceedings of the 6th International Conference on Data Mining, 2006 (PP. 592-602).*
   
 **(4) AdaBoost.NC.**
+
 Since GA is very time consuming, in the above reference, the authors propose AdaBoost.NC which deprecates the GA algorithm, but emphasizes ensemble diversity during training, and exploits its good generalization performance to facilitate class imbalance learning.
 
 *Reference for AdaBoost.NC: Wang, S., Chen, H. & Yao, X. Negative correlation learning for classification ensembles. Proc. Int. Joint
   Conf. Neural Netw., 2010 (PP. 2893-2900).*
 
 **(5) PIBoost.**
+
 PIBoost combines binary weak-learners to separate groups of classes, and uses a margin-based exponential loss function to classify multi-class imbalanced data.
 
-*Reference for PIBoost: Fernndez, B. A. & Baumela. L. (2014). Multi-class boosting with asymmetric binary weak-learners. 
-  Pattern Recognition, 2014, 47(5), PP. 2080-2090.*
+*Reference for PIBoost: Fernndez, B. A. & Baumela. L. (2014). Multi-class boosting with asymmetric binary weak-learners. Pattern Recognition, 2014, 47(5), PP. 2080-2090.*
   
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -227,6 +228,8 @@ PIBoost combines binary weak-learners to separate groups of classes, and uses a 
 
 *Reference of DECOC: Jingjun Bi, Chongsheng Zhang*. (2018). An Empirical Comparison on State-of-the-art Multi-class Imbalance  Learning Algorithms and A New Diversified Ensemble Learning Scheme.  Knowledge-based Systems, 2018.*
 
+Our DECOC algorithm contains the following steps:
+
 Step 1: DECOC first uses ECOC strategy to tranform the multi-class data into multiple binary data, then finds the best classifier for each specific binaried data, which will be kept by ft.
 
 Step 2: Using funcwEDOVO, DECOC builds the best classifier for each binarized data (by ECOC) and the predictions are in allpre.
@@ -295,6 +298,7 @@ Step 5.  in the prediction phase, see funcPre.m, all the nc*(nc-1)/2 classificat
 *We obtain the codes of IFROWANN (fuzzyImb) from the authors, we greatly acknowledge their help and contributions. It was originally designed for binary imbalanced data. In this work, we extend IFROWANN with the ECOC encoding strategy to handle multi-class imbalanced data.*
 
 The main procedure of fuzzyImbECOC:
+
 Step 1. Using funECOC(), fuzzyImbECOC first generates the ECOC matrix (with each codeword for a specific class), each class will be represented by an array of codes such as 1 1 -1 -1 1 -1.
 
 Step 2. It next extracts the instances (and the corresponding labels) of each original class, keep in train{i};
@@ -333,12 +337,15 @@ Step 3. the ECOC matrix for all the classes is an nc*number1 matrix, each row re
 *Reference： Hoens, T. R., Qian, Q., Chawla, N. V., et al. (2012). Building decision trees for the multi-class imbalance problem.    Advances in Knowledge Discovery and Data Mining. Springer Berlin Heidelberg, 2012 (PP. 122-134).*
   
 **(1)HDDTova**
+
 *HDDTova is HDDT plus the decomposition technique OVA for multi-class imbalanced data. It is our own extension of HDDT to multi-class imbalanced data. HDDTova builds numberc of binary HDDT classifiers by combining the OVA strategy and HDDT, then combines the outputs of different binary HDDT classifiers generated using the OVA strategy. Here, the decoding strategy for OVA is the same as the imECOC decoding. It must be noted that the decoding strategy for testHDDTecoc and testHDDTova are identical, for fair comparisons between them.
 
 **(2)HDDTecoc**
+
 *HDDTecoc is HDDT plus the decomposition technique ECOC for multi-class imbalanced data. It builds number1 of binary HDDT classifiers by combining the ECOC strategy and HDDT. Then combines the outputs of different binary HDDT classifiers generated using the ECOC strategy.
 
 **(3)MCHDDT**
+
 *MCHDDT, the Multi-Class HDDT method, successively takes one or a pair of classes as the positive class and the rest as negative class, when calculating the Hellinger distance for each feature. It next selects the maximum Hellinger value for this feature. Finally, it obtains the maximum Hellinger value for each feature, then the feature with maximum Hellinger distance will be used to split the node. Then, after determining the best split feature, it recursively build the child trees. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -393,8 +400,7 @@ Step 3. the ECOC matrix for all the classes is an nc*number1 matrix, each row re
 # 6. imECOC 
   *a class of 3 algorithms in total, all of which are variants of imECOC.*
 
-*Reference: Liu, X. Y., Li, Q. Q. & Zhou Z H. (2013). Learning imbalanced multi-class data with optimal dichotomy
-  weights. IEEE 13th International Conference on Data Mining (IEEE ICDM), 2013 (PP.  478-487).*
+*Reference: Liu, X. Y., Li, Q. Q. & Zhou Z H. (2013). Learning imbalanced multi-class data with optimal dichotomy weights. IEEE 13th International Conference on Data Mining (IEEE ICDM), 2013 (PP.  478-487).*
 
 The imECOC algorithm contains the following steps:
 
@@ -430,7 +436,7 @@ Step 3. in the prediction phase, it decodes it with weighted distance to obtain 
 			
     % Usage for imECOC+OVA:
 		
-   for d=1:5
+    for d=1:5
      
         [Cost(d).imECOCo1tr,Cost(d).imECOCo1te,Pre(d).imECOCo1] = imECOC(data(d).train,data(d).trainlabel,data(d).test, 'OVA',1);
         
@@ -452,9 +458,6 @@ Step 3. in the prediction phase, it decodes it with weighted distance to obtain 
     end
 		
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
 
 
 
