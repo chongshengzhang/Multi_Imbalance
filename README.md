@@ -18,6 +18,8 @@
 
 # (2) Software Contents
 
+The software has 9 major folders which are described below.
+
 1. The folder 'Boost' contains a class of 5 Boosting methods: AdaBoost.M1, AdaC2.M1, SAMME, AdaBoost.NC, PIBoost).
 
 2. The folder 'DECOC' contains algorithm DECOC.
