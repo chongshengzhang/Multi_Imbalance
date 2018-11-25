@@ -68,58 +68,57 @@ In the following, we give the user manual of these 18 major algorithms for multi
 
 
 # 1. Variants of AdaBoost for Multi-class Imbalance Learning 
-     (a class of 5 algorithms in total, all of which are variants of Boost/AdaBoost)
-
-*These 5 algorithms are under the folder "Boost".*
-
-*AdaBoost (Adaptive Boosting) is a binary classification algorithm proposed by Freund and Schapire that integrates multiple weak classifiers to build a stronger classifier. AdaBoost only supports binary data in the beginning, but it was later extended to multi-class scenarios. AdaBoost.M1 and SAMME (Stagewise Additive Modeling using a Multi-class Exponential loss function) have extended AdaBoost in both the update of samples’ weights and the classifier combination strategy. The main difference between them is the method  for updating the weights of the samples.*
-
-**(1) AdaBoost.M1. The main steps of AdaBoost.M1 are as follows:**
-
-  Step 1: Initialize the weight Vector with uniform distribution
-
-  Step 2: for t=1 to Max_Iter do
-
-  Step 3:    Fit a classifier nb to the training data using weights
-
-  Step 4:    Compute weighted error
-
-  Step 5:    Compute AlphaT=0.5*log((CorrectRate+eps)/(errorRate+eps))
-
-  Step 6:    Update weights
-
-  Step 7:    Re-normalize weight
-
-  Step 8: end for
-
-  Step 9: Output Final Classifier
-
-*Reference for AdaBoost.M1: Freund, Y. & Schapire, R. E. (1997). A decision-theoretic generalization of on-line learning and an
-  application to boosting. Journal of Computer and System Sciences, August 1997, 55(1).*
 
 
-**(2) SAMME. The main procedure (steps) of the SAMME algorithm:**
+	These 5 algorithms are under the folder "Boost", all of them are variants of Boost/AdaBoost. 
+	
+	AdaBoost (Adaptive Boosting) is a binary classification algorithm proposed by Freund and Schapire that integrates multiple weak classifiers to build a stronger classifier. AdaBoost only supports binary data in the beginning, but it was later extended to multi-class scenarios. AdaBoost.M1 and SAMME (Stagewise Additive Modeling using a Multi-class Exponential loss function) have extended AdaBoost in both the update of samples’ weights and the classifier combination strategy. The main difference between them is the method  for updating the weights of the samples.
+	
+	(1) AdaBoost.M1. 
+		The main steps of AdaBoost.M1 are as follows:
 
-  Step 1: Initialize the weight Vector with uniform distribution
+	Step 1: Initialize the weight Vector with uniform distribution
 
-  Step 2: for t=1 to Max_Iter do
+    Step 2: for t=1 to Max_Iter do
 
-  Step 3:    Fit a classifier nb to the training data using weights
+    Step 3:    Fit a classifier nb to the training data using weights
 
-  Step 4:    Compute weighted error: errorRate=sum(weight(find(predicted~=trainlabel)));
+    Step 4:    Compute weighted error
 
-  Step 5:    Compute AlphaT=log((1-errorRate)/(errorRate+eps))+log(length(labels)-1)
+    Step 5:    Compute AlphaT=0.5*log((CorrectRate+eps)/(errorRate+eps))
 
-  Step 6:    Update weights weight(i)=weight(i)* exp( AlphaT(t));(trainlabel(i)~=predicted(i))
+    Step 6:    Update weights
 
-  Step 7:    Re-normalize weight
+    Step 7:    Re-normalize weight
 
-  Step 8: end for
+    Step 8: end for
 
-  Step 9: Output Final Classifier
+    Step 9: Output Final Classifier
 
-*Reference for SAMME  Zhu, J., Zou, H., Rosset, S., et al. (2006). Multi-class AdaBoost. Statistics & Its Interface,
-  2006, 2(3), 349-360.*
+    Reference for AdaBoost.M1: Freund, Y. & Schapire, R. E. (1997). A decision-theoretic generalization of on-line learning and an application to boosting. Journal of Computer and System Sciences, August 1997, 55(1).
+
+
+	(2) SAMME. The main procedure (steps) of the SAMME algorithm:
+	
+    Step 1: Initialize the weight Vector with uniform distribution
+
+    Step 2: for t=1 to Max_Iter do
+
+    Step 3:    Fit a classifier nb to the training data using weights
+
+    Step 4:    Compute weighted error: errorRate=sum(weight(find(predicted~=trainlabel)));
+
+    Step 5:    Compute AlphaT=log((1-errorRate)/(errorRate+eps))+log(length(labels)-1)
+
+    Step 6:    Update weights weight(i)=weight(i)* exp( AlphaT(t));(trainlabel(i)~=predicted(i))
+
+    Step 7:    Re-normalize weight
+
+    Step 8: end for
+
+    Step 9: Output Final Classifier
+
+    Reference for SAMME  Zhu, J., Zou, H., Rosset, S., et al. (2006). Multi-class AdaBoost. Statistics & Its Interface, 2006, 2(3), 349-360.
 
 % (3) AdaC2.M1 (adaC2cartM1). It derives the best cost setting through the genetic algorithm (GA) method, then
 
