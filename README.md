@@ -158,10 +158,34 @@ PIBoost combines binary weak-learners to separate groups of classes, and uses a 
 			
     % Usage for adaboostcartM1:
 		
-    for d=1:5
-   
-        [Cost(d).adaboostcartM1tr,Cost(d).adaboostcartM1te,Pre(d).adaboostcartM1] = adaboostcartM1(data(d).train,data(d).trainlabel,data(d).test,20);
-     
+    function runAdaBoostM1
+    javaaddpath('weka.jar');
+
+    p = genpath(pwd);
+    addpath(p, '-begin');
+    % record = 'testall.txt';
+    % save record record
+
+    dataset_list = {'Wine_data_set_indx_fixed'};
+
+    for p = 1:length(dataset_list)%1:numel(dataset_list)
+        load(['data\', dataset_list{p},'.mat']);
+        disp([dataset_list{p}, ' - numero dataset: ',num2str(p), ]);
+      
+    %AdaBoost.M1
+    %input: traindata,trainlabel,testdata,testlabel,Max_Iter
+    %output: trainCostTime,predictCostTime,predictResult
+        for d=1:5
+    
+    [Cost(d).adaboostcartM1tr,Cost(d).adaboostcartM1te,Pre(d).adaboostcartM1] = adaBoostCartM1(data(d).train,data(d).trainlabel,data(d).test,20);
+        
+        end
+        
+        save (['results/', dataset_list{p},'_',  'p', '.mat'], 'Pre');
+        save (['results/', dataset_list{p},'_', 'c', '.mat'],  'Cost');
+        
+        clear Cost Pre Indx;
+
     end
 
 
@@ -173,11 +197,36 @@ PIBoost combines binary weak-learners to separate groups of classes, and uses a 
 			
     % Usage for adaboostcartM1:
 		
-    for d=1:5
-       
-        [Cost(d).SAMMEcarttr,Cost(d).SAMMEcartte,Pre(d).SAMMEcart] = SAMMEcart(data(d).train,data(d).trainlabel,data(d).test,20);
-      
+    function runSAMME
+    javaaddpath('weka.jar');
+
+    p = genpath(pwd);
+    addpath(p, '-begin');
+    % record = 'testall.txt';
+    % save record record
+
+    dataset_list = {'Wine_data_set_indx_fixed'};
+
+    for p = 1:length(dataset_list)%1:numel(dataset_list)
+        load(['data\', dataset_list{p},'.mat']);
+        disp([dataset_list{p}, ' - numero dataset: ',num2str(p), ]);
+
+    %SAMME
+    %input: traindata,trainlabel,testdata,testlabel,Max_Iter
+    %output: trainCostTime,predictCostTime,predictResult
+        for d=1:5
+        
+            [Cost(d).SAMMEcarttr,Cost(d).SAMMEcartte,Pre(d).SAMMEcart] = sammeCart(data(d).train,data(d).trainlabel,data(d).test,20);
+        
+        end
+
+        save (['results/', dataset_list{p},'_',  'p', '.mat'], 'Pre');
+        save (['results/', dataset_list{p},'_', 'c', '.mat'],  'Cost');
+        
+        clear Cost Pre Indx;
+
     end
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -188,15 +237,40 @@ PIBoost combines binary weak-learners to separate groups of classes, and uses a 
 			
     % Usage for adaC2cartM1:
 		
-    for d=1:5
-        tic;
-        C0=GAtest(data(d).train,data(d).trainlabel);
-        Cost(d).GA=toc;
-        Indx(d).GA=C0;
-       
-        [Cost(d).adaC2cartM1GAtr,Cost(d).adaC2cartM1GAte,Pre(d).adaC2cartM1GA] = adaC2cartM1(data(d).train,data(d).trainlabel,data(d).test,20,C0);
-     
+    function runAdaC2M1
+    javaaddpath('weka.jar');
+
+    p = genpath(pwd);
+    addpath(p, '-begin');
+    % record = 'testall.txt';
+    % save record record
+
+    dataset_list = {'Wine_data_set_indx_fixed'};
+
+    for p = 1:length(dataset_list)%1:numel(dataset_list)
+        load(['data\', dataset_list{p},'.mat']);
+        disp([dataset_list{p}, ' - numero dataset: ',num2str(p), ]);
+
+    %AdaC2.M1
+    %input: traindata,trainlabel,testdata,testlabel,Max_Iter,C
+    %output: trainCostTime,predictCostTime,predictResult
+        for d=1:5
+            tic;
+            C0=GAtest(data(d).train,data(d).trainlabel);
+            Cost(d).GA=toc;
+            Indx(d).GA=C0;
+        
+            [Cost(d).adaC2cartM1GAtr,Cost(d).adaC2cartM1GAte,Pre(d).adaC2cartM1GA] = adaC2CartM1(data(d).train,data(d).trainlabel,data(d).test,20,C0);
+        
+        end
+
+        save (['results/', dataset_list{p},'_',  'p', '.mat'], 'Pre');
+        save (['results/', dataset_list{p},'_', 'c', '.mat'],  'Cost');
+        
+        clear Cost Pre Indx;
+
     end
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -206,10 +280,33 @@ PIBoost combines binary weak-learners to separate groups of classes, and uses a 
 			
     % Usage for adaboostcartNC:
 		
-    for d=1:5
- 
-        [Cost(d).adaboostcartNCtr,Cost(d).adaboostcartNCte,Pre(d).adaboostcartNC] = adaboostcartNC(data(d).train,data(d).trainlabel,data(d).test,20,2);
+    function runAdaBoostNC
+    javaaddpath('weka.jar');
+
+    p = genpath(pwd);
+    addpath(p, '-begin');
+    % record = 'testall.txt';
+    % save record record
+
+    dataset_list = {'Wine_data_set_indx_fixed'};
+
+    for p = 1:length(dataset_list)%1:numel(dataset_list)
+        load(['data\', dataset_list{p},'.mat']);
+        disp([dataset_list{p}, ' - numero dataset: ',num2str(p), ]);
+
+    %AdaBoost.NC
+    %input: traindata,trainlabel,testdata,testlabel,Max_Iter,lama
+    %output: trainCostTime,predictCostTime,predictResult
+        for d=1:5
     
+            [Cost(d).adaboostcartNCtr,Cost(d).adaboostcartNCte,Pre(d).adaboostcartNC] = adaBoostCartNC(data(d).train,data(d).trainlabel,data(d).test,20,2);
+        
+        end
+
+        save (['results/', dataset_list{p},'_',  'p', '.mat'], 'Pre');
+        save (['results/', dataset_list{p},'_', 'c', '.mat'],  'Cost');
+        
+        clear Cost Pre Indx;
     end
 
 
@@ -221,11 +318,35 @@ PIBoost combines binary weak-learners to separate groups of classes, and uses a 
 			
     % Usage for PIBoostcart:
 		
-    for d=1:5
-     
-        [Cost(d).PIBoostcarttr,Cost(d).PIBoostcartte,Pre(d).PIBoostcart] = PIBoostcart(data(d).train,data(d).trainlabel,data(d).test,20);
-      
+    function runPIBoost
+    javaaddpath('weka.jar');
+
+    p = genpath(pwd);
+    addpath(p, '-begin');
+    % record = 'testall.txt';
+    % save record record
+
+    dataset_list = {'Wine_data_set_indx_fixed'};
+
+    for p = 1:length(dataset_list)%1:numel(dataset_list)
+        load(['data\', dataset_list{p},'.mat']);
+        disp([dataset_list{p}, ' - numero dataset: ',num2str(p), ]);
+
+    %PIBoost
+    %input: traindata,trainlabel,testdata,testlabel,Max_Iter
+    %output: trainCostTime,predictCostTime,predictResult
+        for d=1:5
+        
+            [Cost(d).PIBoostcarttr,Cost(d).PIBoostcartte,Pre(d).PIBoostcart] = PIBoostCart(data(d).train,data(d).trainlabel,data(d).test,20);
+        
+        end
+
+        save (['results/', dataset_list{p},'_',  'p', '.mat'], 'Pre');
+        save (['results/', dataset_list{p},'_', 'c', '.mat'],  'Cost');
+        
+        clear Cost Pre Indx;
     end
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -256,10 +377,34 @@ Step 3: With funcpretestEDOVO, DECOC makes the predictions on the test data, usi
 	
     % Usuage of the DECOC method: 
 		
-    for d=1:5
-  
-        [Cost(d).imECOCDOVOs1tr,Cost(d).imECOCDOVOs1te,Pre(d).imECOCDOVOs1] = DECOC(data(d).train,data(d).trainlabel,data(d).test, 'sparse',1);
-      
+   function runDECOC
+    javaaddpath('weka.jar');
+
+    p = genpath(pwd);
+    addpath(p, '-begin');
+    % record = 'testall.txt';
+    % save record record
+
+    dataset_list = {'Wine_data_set_indx_fixed'};
+
+    for p = 1:length(dataset_list)%1:numel(dataset_list)
+        load(['data\', dataset_list{p},'.mat']);
+        disp([dataset_list{p}, ' - numero dataset: ',num2str(p), ]);
+
+        %DECOC
+        %input: traindata,trainlabel,testdata,testlabel,type,withw
+        %output: trainCostTime,predictCostTime,predictResult
+        for d=1:5
+    
+            [Cost(d).imECOCDOVOs1tr,Cost(d).imECOCDOVOs1te,Pre(d).imECOCDOVOs1] = DECOC(data(d).train,data(d).trainlabel,data(d).test, 'sparse',1);
+        
+        end
+
+        save (['results/', dataset_list{p},'_',  'p', '.mat'], 'Pre');
+        save (['results/', dataset_list{p},'_', 'c', '.mat'],  'Cost');
+        
+        clear Cost Pre Indx;
+
     end
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -297,11 +442,36 @@ Step 5.  in the prediction phase, see funcPre.m, all the nc*(nc-1)/2 classificat
     % The principles and procedure (and the rational) of this algorithm are explained/given in DOVO.m.
 	
     % Usuage of the DOVO method: 
-    for d=1:5
+    function runDOVO
+    javaaddpath('weka.jar');
 
-        [Cost(d).DOAOtr,Cost(d).DOAOte,Pre(d).DOAO,Indx(d).C] = DOAO([data(d).train,data(d).trainlabel],data(d).test,data(d).testlabel,5);
+    p = genpath(pwd);
+    addpath(p, '-begin');
+    % record = 'testall.txt';
+    % save record record
+
+    dataset_list = {'Wine_data_set_indx_fixed'};
+
+    for p = 1:length(dataset_list)%1:numel(dataset_list)
+        load(['data\', dataset_list{p},'.mat']);
+        disp([dataset_list{p}, ' - numero dataset: ',num2str(p), ]);
+
+    %DOVO
+    %input: traindata,trainlabel,testdata,testlabel,kfold
+    %output: trainCostTime,predictCostTime,predictResult,bestChosen
+        for d=1:5
+
+            [Cost(d).DOAOtr,Cost(d).DOAOte,Pre(d).DOAO,Indx(d).C] = DOVO([data(d).train,data(d).trainlabel],data(d).test,data(d).testlabel,5);
+
+        end
+
+        save (['results/', dataset_list{p},'_',  'p', '.mat'], 'Pre');
+        save (['results/', dataset_list{p},'_', 'c', '.mat'],  'Cost');
+        
+        clear Cost Pre Indx;
 
     end
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -340,13 +510,36 @@ Step 3. the ECOC matrix for all the classes is an nc*number1 matrix, each row re
     % The principles and procedure (and the rational) of this algorithm are explained/given in fuzzyImbECOC.m.
 			
     % Usage for fuzzyImbECOC (FuzzyImb+ECOC)
-    for d=1:5
-      tic;
-			
-      [Pre(d).fuzzyw6] = fuzzyImbECOC(data(d).train,data(d).trainlabel,data(d).test,data(d).testlabel, 'w6',0.1); 
-			
-      Cost(d).fuzzyw6=toc;
+    function runFuzzyImbECOC
+    javaaddpath('weka.jar');
+
+    p = genpath(pwd);
+    addpath(p, '-begin');
+    % record = 'testall.txt';
+    % save record record
+
+    dataset_list = {'Wine_data_set_indx_fixed'};
+
+    for p = 1:length(dataset_list)%1:numel(dataset_list)
+        load(['data\', dataset_list{p},'.mat']);
+        disp([dataset_list{p}, ' - numero dataset: ',num2str(p), ]);
+
+    %FuzzyImb+ECOC
+    %input: traindata,trainlabel,testdata,testlabel,weightStrategy,gamma
+    %output: trainCostTime,predictCostTime,predictResult
+        for d=1:5
+            tic;
+            [Pre(d).fuzzyw6] = fuzzyImbECOC(data(d).train,data(d).trainlabel,data(d).test,data(d).testlabel, 'w6',0.1);
+            Cost(d).fuzzyw6=toc;
+        end
+
+        save (['results/', dataset_list{p},'_',  'p', '.mat'], 'Pre');
+        save (['results/', dataset_list{p},'_', 'c', '.mat'],  'Cost');
+        
+        clear Cost Pre Indx;
+
     end
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -385,12 +578,36 @@ Step 3. the ECOC matrix for all the classes is an nc*number1 matrix, each row re
 			
     % Usage for HDDTova:
 		
-    for d=1:5
-    
-        [Cost(d).HDDTovatr,Cost(d).HDDTovate,Pre(d).HDDTova] = HDDTova(data(d).train,data(d).trainlabel,data(d).test,data(d).testlabel);
+    function runHDDTOVA
+    javaaddpath('weka.jar');
+
+    p = genpath(pwd);
+    addpath(p, '-begin');
+    % record = 'testall.txt';
+    % save record record
+
+    dataset_list = {'Wine_data_set_indx_fixed'};
+
+    for p = 1:length(dataset_list)%1:numel(dataset_list)
+        load(['data\', dataset_list{p},'.mat']);
+        disp([dataset_list{p}, ' - numero dataset: ',num2str(p), ]);
+
+    %HDDT+OVA
+    %input: traindata,trainlabel,testdata,testlabel,
+    %output: trainCostTime,predictCostTime,predictResult
+        for d=1:5
         
+            [Cost(d).HDDTovatr,Cost(d).HDDTovate,Pre(d).HDDTova] = HDDTOVA(data(d).train,data(d).trainlabel,data(d).test,data(d).testlabel);
+            
+        end
+
+        save (['results/', dataset_list{p},'_',  'p', '.mat'], 'Pre');
+        save (['results/', dataset_list{p},'_', 'c', '.mat'],  'Cost');
+        
+        clear Cost Pre Indx;
+
     end
-		
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
 
@@ -400,11 +617,36 @@ Step 3. the ECOC matrix for all the classes is an nc*number1 matrix, each row re
 			
     % Usage for HDDTecoc:
 		
-    for d=1:5
+    function runHDDTECOC
+    javaaddpath('weka.jar');
 
-        [Cost(d).HDDTecoctr,Cost(d).HDDTecocte,Pre(d).HDDTecoc] = HDDTecoc(data(d).train,data(d).trainlabel,data(d).test,data(d).testlabel);
+    p = genpath(pwd);
+    addpath(p, '-begin');
+    % record = 'testall.txt';
+    % save record record
+
+    dataset_list = {'Wine_data_set_indx_fixed'};
+
+    for p = 1:length(dataset_list)%1:numel(dataset_list)
+        load(['data\', dataset_list{p},'.mat']);
+        disp([dataset_list{p}, ' - numero dataset: ',num2str(p), ]);
+
+    %HDDT+ECOC
+    %input: traindata,trainlabel,testdata,testlabel,
+    %output: trainCostTime,predictCostTime,predictResult
+        for d=1:5
+
+            [Cost(d).HDDTecoctr,Cost(d).HDDTecocte,Pre(d).HDDTecoc] = HDDTECOC(data(d).train,data(d).trainlabel,data(d).test,data(d).testlabel);
+
+        end
+    
+        save (['results/', dataset_list{p},'_',  'p', '.mat'], 'Pre');
+        save (['results/', dataset_list{p},'_', 'c', '.mat'],  'Cost');
+        
+        clear Cost Pre Indx;
 
     end
+
 		
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -415,11 +657,36 @@ Step 3. the ECOC matrix for all the classes is an nc*number1 matrix, each row re
 			
     % Usage for MCHDDT:
 		
-    for d=1:5
-  
-        [Cost(d).MCHDDTtr,Cost(d).MCHDDTte,Pre(d).MCHDDT] = MCHDDT(data(d).train,data(d).trainlabel,data(d).test,data(d).testlabel);
+    function runMCHDDT
+    javaaddpath('weka.jar');
+
+    p = genpath(pwd);
+    addpath(p, '-begin');
+    % record = 'testall.txt';
+    % save record record
+
+    dataset_list = {'Wine_data_set_indx_fixed'};
+
+    for p = 1:length(dataset_list)%1:numel(dataset_list)
+        load(['data\', dataset_list{p},'.mat']);
+        disp([dataset_list{p}, ' - numero dataset: ',num2str(p), ]);
+
+    %MC-HDDT
+    %input: traindata,trainlabel,testdata,testlabel,
+    %output: trainCostTime,predictCostTime,predictResult
+        for d=1:5
     
-    end		
+            [Cost(d).MCHDDTtr,Cost(d).MCHDDTte,Pre(d).MCHDDT] = MCHDDT(data(d).train,data(d).trainlabel,data(d).test,data(d).testlabel);
+        
+        end
+
+        save (['results/', dataset_list{p},'_',  'p', '.mat'], 'Pre');
+        save (['results/', dataset_list{p},'_', 'c', '.mat'],  'Cost');
+        
+        clear Cost Pre Indx;
+
+    end
+	
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -454,10 +721,34 @@ Step 3. in the prediction phase, it decodes it with weighted distance to obtain 
 			
     % Usage for imECOC+sparse:
 		
-    for d=1:5
-    
-        [Cost(d).imECOCs1tr,Cost(d).imECOCs1te,Pre(d).imECOCs1] = imECOC(data(d).train,data(d).trainlabel,data(d).test, 'sparse',1);
-       
+    function runImECOCsparse
+    javaaddpath('weka.jar');
+
+    p = genpath(pwd);
+    addpath(p, '-begin');
+    % record = 'testall.txt';
+    % save record record
+
+    dataset_list = {'Wine_data_set_indx_fixed'};
+
+    for p = 1:length(dataset_list)%1:numel(dataset_list)
+        load(['data\', dataset_list{p},'.mat']);
+        disp([dataset_list{p}, ' - numero dataset: ',num2str(p), ]);
+
+    %imECOC+sparse
+    %input: traindata,trainlabel,testdata,testlabel,type,withw
+    %output: trainCostTime,predictCostTime,predictResult
+        for d=1:5
+        
+            [Cost(d).imECOCs1tr,Cost(d).imECOCs1te,Pre(d).imECOCs1] = imECOC(data(d).train,data(d).trainlabel,data(d).test, 'sparse',1);
+        
+        end
+
+        save (['results/', dataset_list{p},'_',  'p', '.mat'], 'Pre');
+        save (['results/', dataset_list{p},'_', 'c', '.mat'],  'Cost');
+        
+        clear Cost Pre Indx;
+
     end
 
 
@@ -469,11 +760,36 @@ Step 3. in the prediction phase, it decodes it with weighted distance to obtain 
 			
     % Usage for imECOC+OVA:
 		
-    for d=1:5
-     
-        [Cost(d).imECOCo1tr,Cost(d).imECOCo1te,Pre(d).imECOCo1] = imECOC(data(d).train,data(d).trainlabel,data(d).test, 'OVA',1);
+    function runImECOCOVA
+    javaaddpath('weka.jar');
+
+    p = genpath(pwd);
+    addpath(p, '-begin');
+    % record = 'testall.txt';
+    % save record record
+
+    dataset_list = {'Wine_data_set_indx_fixed'};
+
+    for p = 1:length(dataset_list)%1:numel(dataset_list)
+        load(['data\', dataset_list{p},'.mat']);
+        disp([dataset_list{p}, ' - numero dataset: ',num2str(p), ]);
+
+    %imECOC+OVA
+    %input: traindata,trainlabel,testdata,testlabel,type,withw
+    %output: trainCostTime,predictCostTime,predictResult
+        for d=1:5
         
+            [Cost(d).imECOCo1tr,Cost(d).imECOCo1te,Pre(d).imECOCo1] = imECOC(data(d).train,data(d).trainlabel,data(d).test, 'OVA',1);
+            
+        end
+
+        save (['results/', dataset_list{p},'_',  'p', '.mat'], 'Pre');
+        save (['results/', dataset_list{p},'_', 'c', '.mat'],  'Cost');
+        
+        clear Cost Pre Indx;
+
     end
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
@@ -483,12 +799,37 @@ Step 3. in the prediction phase, it decodes it with weighted distance to obtain 
     % The principles and procedure (and the rational) of this algorithm are explained/given in imECOC.m.
 			
     % Usage for imECOC+dense:
-		
-    for d=1:5
-      
-        [Cost(d).imECOCd1tr,Cost(d).imECOCd1te,Pre(d).imECOCd1] = imECOC(data(d).train,data(d).trainlabel,data(d).test, 'dense',1);
+            
+    function runImECOCdense
+    javaaddpath('weka.jar');
+
+    p = genpath(pwd);
+    addpath(p, '-begin');
+    % record = 'testall.txt';
+    % save record record
+
+    dataset_list = {'Wine_data_set_indx_fixed'};
+
+    for p = 1:length(dataset_list)%1:numel(dataset_list)
+        load(['data\', dataset_list{p},'.mat']);
+        disp([dataset_list{p}, ' - numero dataset: ',num2str(p), ]);
+
+    %imECOC+dense
+    %input: traindata,trainlabel,testdata,testlabel,type,withw
+    %output: trainCostTime,predictCostTime,predictResult
+        for d=1:5
+        
+            [Cost(d).imECOCd1tr,Cost(d).imECOCd1te,Pre(d).imECOCd1] = imECOC(data(d).train,data(d).trainlabel,data(d).test, 'dense',1);
+        
+        end
     
+        save (['results/', dataset_list{p},'_',  'p', '.mat'], 'Pre');
+        save (['results/', dataset_list{p},'_', 'c', '.mat'],  'Cost');
+        
+        clear Cost Pre Indx;
+
     end
+
 		
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -516,11 +857,36 @@ Step 3. in the prediction phase, it decodes it with weighted distance to obtain 
 			
     % Usage for Muti-IM+OVA:
 		
-    for d=1:5
-     
-        [Cost(d).classOVAtr,Cost(d).classOVAte,Pre(d).classOVA] = classOVA(data(d).train,data(d).trainlabel,data(d).test);
-     
+    function runMultiImOVA
+    javaaddpath('weka.jar');
+
+    p = genpath(pwd);
+    addpath(p, '-begin');
+    % record = 'testall.txt';
+    % save record record
+
+    dataset_list = {'Wine_data_set_indx_fixed'};
+
+    for p = 1:length(dataset_list)%1:numel(dataset_list)
+        load(['data\', dataset_list{p},'.mat']);
+        disp([dataset_list{p}, ' - numero dataset: ',num2str(p), ]);
+
+    %Multi-IM+OVA
+    %input: traindata,trainlabel,testdata,testlabel,
+    %output: trainCostTime,predictCostTime,predictResult
+        for d=1:5
+        
+            [Cost(d).classOVAtr,Cost(d).classOVAte,Pre(d).classOVA] = classOVA(data(d).train,data(d).trainlabel,data(d).test);
+        
+        end
+
+        save (['results/', dataset_list{p},'_',  'p', '.mat'], 'Pre');
+        save (['results/', dataset_list{p},'_', 'c', '.mat'],  'Cost');
+        
+        clear Cost Pre Indx;
+
     end
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
 
@@ -530,11 +896,36 @@ Step 3. in the prediction phase, it decodes it with weighted distance to obtain 
 		
     % Usage for Muti-IM+OVO:		
     
-    for d=1:5
-      
-        [Cost(d).classOAOtr,Cost(d).classOAOte,Pre(d).classOAO] = classOAO([data(d).train,data(d).trainlabel],data(d).test);
-    
+    function runMultiImOVO
+    javaaddpath('weka.jar');
+
+    p = genpath(pwd);
+    addpath(p, '-begin');
+    % record = 'testall.txt';
+    % save record record
+
+    dataset_list = {'Wine_data_set_indx_fixed'};
+
+    for p = 1:length(dataset_list)%1:numel(dataset_list)
+        load(['data\', dataset_list{p},'.mat']);
+        disp([dataset_list{p}, ' - numero dataset: ',num2str(p), ]);
+
+    %Multi-IM+OVO
+    %input: traindata,trainlabel,testdata,testlabel,
+    %output: trainCostTime,predictCostTime,predictResult
+        for d=1:5
+        
+            [Cost(d).classOAOtr,Cost(d).classOAOte,Pre(d).classOAO] = classOAO([data(d).train,data(d).trainlabel],data(d).test);
+        
+        end
+
+        save (['results/', dataset_list{p},'_',  'p', '.mat'], 'Pre');
+        save (['results/', dataset_list{p},'_', 'c', '.mat'],  'Cost');
+        
+        clear Cost Pre Indx;
+
     end
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -544,10 +935,34 @@ Step 3. in the prediction phase, it decodes it with weighted distance to obtain 
 		
     % Usage for Muti-IM+OAHO:		
         
-    for d=1:5
+    function runMultiImOAHO
+    javaaddpath('weka.jar');
 
-        [Cost(d).classOAHOtr,Cost(d).classOAHOte,Pre(d).classOAHO] = classOAHO([data(d).train,data(d).trainlabel],data(d).test);
-      
+    p = genpath(pwd);
+    addpath(p, '-begin');
+    % record = 'testall.txt';
+    % save record record
+
+    dataset_list = {'Wine_data_set_indx_fixed'};
+
+    for p = 1:length(dataset_list)%1:numel(dataset_list)
+        load(['data\', dataset_list{p},'.mat']);
+        disp([dataset_list{p}, ' - numero dataset: ',num2str(p), ]);
+
+    %Multi-IM+OAHO
+    %input: traindata,trainlabel,testdata,testlabel,
+    %output: trainCostTime,predictCostTime,predictResult
+        for d=1:5
+
+            [Cost(d).classOAHOtr,Cost(d).classOAHOte,Pre(d).classOAHO] = classOAHO([data(d).train,data(d).trainlabel],data(d).test);
+        
+        end
+
+        save (['results/', dataset_list{p},'_',  'p', '.mat'], 'Pre');
+        save (['results/', dataset_list{p},'_', 'c', '.mat'],  'Cost');
+        
+        clear Cost Pre Indx;
+
     end
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -558,11 +973,36 @@ Step 3. in the prediction phase, it decodes it with weighted distance to obtain 
 		
     % Usage for Muti-IM+A&O:	    
  
-    for d=1:5
-       
-        [Cost(d).classAandOtr,Cost(d).classAandOte,Pre(d).classAandO] = classAandO(data(d).train,data(d).trainlabel,data(d).test);
-      
+    function runMultiImAO
+    javaaddpath('weka.jar');
+
+    p = genpath(pwd);
+    addpath(p, '-begin');
+    % record = 'testall.txt';
+    % save record record
+
+    dataset_list = {'Wine_data_set_indx_fixed'};
+
+    for p = 1:length(dataset_list)%1:numel(dataset_list)
+        load(['data\', dataset_list{p},'.mat']);
+        disp([dataset_list{p}, ' - numero dataset: ',num2str(p), ]);
+
+    %Multi-IM+A&O
+    %input: traindata,trainlabel,testdata,testlabel,
+    %output: trainCostTime,predictCostTime,predictResult
+        for d=1:5
+        
+            [Cost(d).classAandOtr,Cost(d).classAandOte,Pre(d).classAandO] = classAandO(data(d).train,data(d).trainlabel,data(d).test);
+        
+        end
+    
+        save (['results/', dataset_list{p},'_',  'p', '.mat'], 'Pre');
+        save (['results/', dataset_list{p},'_', 'c', '.mat'],  'Cost');
+        
+        clear Cost Pre Indx;
+
     end
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

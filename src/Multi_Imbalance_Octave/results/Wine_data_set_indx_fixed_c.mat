@@ -1,0 +1,80 @@
+# Created by Octave 4.4.0, Tue Nov 27 11:16:46 2018 GMT <unknown@119-Win>
+# name: Cost
+# type: struct
+# ndims: 2
+ 1 5
+# length: 2
+# name: imECOCDOVOs1tr
+# type: cell
+# rows: 1
+# columns: 5
+# name: <cell-element>
+# type: scalar
+43.730242967605591
+
+
+
+# name: <cell-element>
+# type: scalar
+43.571164846420288
+
+
+
+# name: <cell-element>
+# type: scalar
+44.388679027557373
+
+
+
+# name: <cell-element>
+# type: scalar
+43.674124956130981
+
+
+
+# name: <cell-element>
+# type: scalar
+41.787511110305786
+
+
+
+
+
+# name: imECOCDOVOs1te
+# type: cell
+# rows: 1
+# columns: 5
+# name: <cell-element>
+# type: scalar
+1.4814491271972656
+
+
+
+# name: <cell-element>
+# type: scalar
+1.6364240646362305
+
+
+
+# name: <cell-element>
+# type: scalar
+1.4690489768981934
+
+
+
+# name: <cell-element>
+# type: scalar
+1.5348560810089111
+
+
+
+# name: <cell-element>
+# type: scalar
+1.5629029273986816
+
+
+
+
+
+
+
