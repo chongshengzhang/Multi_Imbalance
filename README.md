@@ -43,11 +43,14 @@ The software has 9 major folders which are described below.
 *In total,  18 algorithms for multi-class imbalance learning. Note that we also include the 19th algorithm CART as the baseline method, but CART is not towards imbalance learning. The file 'testall.m' is an example of all the methods tested, a total of 19 methods including the above 18 algorithms and the base classifier CART.*
 
 
-# (3) Software Usage Manual
-
+# (3) Software Usage
 There are 7 classes (categories) of algorithms for multi-class imbalance learning, each class consisting of one or more algorithms. 
 
 In total, there are 18 major algorithms for multi-class imbalance learning.
+
+**The detailed documentation of Multi_Imbalance is available at  https://github.com/chongshengzhang/Multi_Imbalance/blob/master/doc/User_manual_Matlab.pdf and https://github.com/chongshengzhang/Multi_Imbalance/blob/master/doc/User_manual_Octave.pdf. The documentation describes the principles and usage of algorithms in Multi_Imbalance. We recommend users to refer to the above documentaion.**
+
+In the following, we also provide a brief user manual for this software.
 
 **The inputs and outputs for these 18 algorithms are the same.**
 
