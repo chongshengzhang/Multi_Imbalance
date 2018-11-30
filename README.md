@@ -5,6 +5,11 @@
 
 ###### The two contributors of this open software for multi-class imbalance learning are  Ms. Jingjun Bi and Prof. Chongsheng Zhang (chongsheng.zhang@yahoo.com). If you have any problems, please do not hesitate to send us an email. 
 
+**The detailed documentation of Multi_Imbalance is available at  https://github.com/chongshengzhang/Multi_Imbalance/blob/master/doc/User_manual_Matlab.pdf and https://github.com/chongshengzhang/Multi_Imbalance/blob/master/doc/User_manual_Octave.pdf. The documentation describes the principles and usage of algorithms in Multi_Imbalance. We recommend readers to use the above documentaion as the primary reference.**
+ 
+ <br />
+In the following, we also provide a brief user manual for this software.
+
 # (1) Installation
 
 1. Software Environments: Please first install and use the Matlab or OCTAVE softwares. 
@@ -48,9 +53,6 @@ There are 7 classes (categories) of algorithms for multi-class imbalance learnin
 
 In total, there are 18 major algorithms for multi-class imbalance learning.
 
-**The detailed documentation of Multi_Imbalance is available at  https://github.com/chongshengzhang/Multi_Imbalance/blob/master/doc/User_manual_Matlab.pdf and https://github.com/chongshengzhang/Multi_Imbalance/blob/master/doc/User_manual_Octave.pdf. The documentation describes the principles and usage of algorithms in Multi_Imbalance. We recommend readers to use the above documentaion as the primary reference.**
-
-In the following, we also provide a brief user manual for this software.
 
 **The inputs and outputs for these 18 algorithms are the same.**
 
