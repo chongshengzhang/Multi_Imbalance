@@ -17,7 +17,7 @@
 %
 % You should have received a copy of the GNU General Public License along with this program. 
 % If not, see <http://www.gnu.org/licenses/>.
-function [time1,time2,pre0] = classOAO(train,testdata)
+function [trainTime,testTime,preResult] = classOAO(train,testdata)
 tic;
 labels = unique (train(:,end));
 numberc=length(labels);
@@ -31,7 +31,7 @@ for i=1:numberc-1
         flagc=flagc+1;
     end
 end
-time1=toc;
+trainTime=toc;
 
 tic;
 numbertest=size(testdata,1);
@@ -41,5 +41,5 @@ for t=1:length(pre)
     allpre(:,t)=pre{t};
 end
 
-pre0=mode(allpre,2);
-time2=toc;
+preResult=mode(allpre,2);
+testTime=toc;

@@ -19,7 +19,7 @@
 % You should have received a copy of the GNU General Public License along with this program. 
 % If not, see <http://www.gnu.org/licenses/>.
 
-function [time1,time2,ResultR0] = adaBoostCartM1(traindata,trainlabel,testdata,Max_Iter)
+function [trainTime,testTime,predictResults] = adaBoostCartM1(traindata,trainlabel,testdata,Max_Iter)
 tic;
 Learners = {};
 weight = ones(1, length(trainlabel)) / length(trainlabel);   % step 1
@@ -50,7 +50,7 @@ for t = 1 : Max_Iter
     weight = weight / Z;%step 7
     
 end
-time1=toc;
+trainTime=toc;
 tic;
 labels=unique(trainlabel);
 
@@ -66,8 +66,8 @@ for i = 1 : length(Learners)
 end
 
 [max_a,ResultR]=max(Result,[],2);
-ResultR0=ResultR;
+predictResults=ResultR;
 for j=1:length(labels)
-    ResultR0(find(ResultR==j))= labels(j);
+    predictResults(find(ResultR==j))= labels(j);
 end
-time2=toc;
+testTime=toc;

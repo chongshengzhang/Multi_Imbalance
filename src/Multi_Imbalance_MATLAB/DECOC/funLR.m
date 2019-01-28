@@ -45,7 +45,7 @@ tr = matlab2weka('train',featureNames,traindata,classindex);
 ts = matlab2weka('test',featureNames,testdata);
 
 nb = trainWekaClassifier(tr,'functions.Logistic');
-predicted = wekaClassify(ts,nb);
+[predicted,probs] = wekaClassify(ts,nb);
 actual = ts.attributeToDoubleArray(classindex-1);
 
 

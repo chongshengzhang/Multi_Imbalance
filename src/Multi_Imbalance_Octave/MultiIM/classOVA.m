@@ -17,7 +17,7 @@
 %
 % You should have received a copy of the GNU General Public License along with this program. 
 % If not, see <http://www.gnu.org/licenses/>.
-function [time1,time2,prelabel] = classOVA(traindata,trainlabel,testdata)
+function [trainTime,testTime,prelabel] = classOVA(traindata,trainlabel,testdata)
 tic;
 labels = unique (trainlabel);
 numberc=length(labels);
@@ -57,7 +57,7 @@ for t=1:numberl
     end
    pre{t} = multiIMCart(Dt,Dtlabel',testdata);
 end
-time1=toc;
+trainTime=toc;
 
 tic;
 numbertest=size(testdata,1);
@@ -82,4 +82,4 @@ for i=1:numbertest
 end
 
 prelabel=prelabel';
-time2=toc;
+testTime=toc;

@@ -18,7 +18,7 @@
 % You should have received a copy of the GNU General Public License along with this program. 
 % If not, see <http://www.gnu.org/licenses/>.
 
-function [time1,time2,prelabel]=HDDTECOC(traindata,trainlabel,testdata,testlabel)
+function [trainTime,testTime,prelabel]=HDDTECOC(traindata,trainlabel,testdata,testlabel)
 
 tic;
 labels = unique (trainlabel);
@@ -58,7 +58,7 @@ for t=1:numberl
     ft{t} = fitHellingerTree(Dt,Dtlabel');
 end
                                
-time1=toc;
+trainTime=toc;
 tic;
 numbertest=size(testdata,1);
 numberclass=size(code,1);
@@ -87,7 +87,7 @@ for i=1:numbertest
 end
 
 prelabel=prelabel';
-time2=toc;
+testTime=toc;
 % correct = (prelabel == testlabel);
 % correct = sum(correct) / length(correct);
 

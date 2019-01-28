@@ -36,5 +36,5 @@ end
 ft = classregtree(traindata,trainlabel,'weights',weight,'method','classification');
 prec=eval(ft,testdata);
 prec=cellfun(@str2num, prec);
-[kc,lratec,result2c,accc,gmeanc,result5c,fmeasurec] = calculateFunc(testlabel,prec);
+[accc,gmeanc] = calculateFunc(testlabel,prec);
 gmean=1/gmeanc;

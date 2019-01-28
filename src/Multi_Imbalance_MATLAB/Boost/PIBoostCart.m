@@ -19,7 +19,7 @@
 % You should have received a copy of the GNU General Public License along with this program. 
 % If not, see <http://www.gnu.org/licenses/>.
 
-function [time1,time2,ResultR0] = PIBoostCart(traindata,trainlabel,testdata,Max_Iter)
+function [trainTime,testTime,predictResults] = PIBoostCart(traindata,trainlabel,testdata,Max_Iter)
 tic;
 s=1;
 labels=unique(trainlabel);
@@ -139,7 +139,7 @@ for m=1:Max_Iter
              
 end
 
-time1=toc;
+trainTime=toc;
 tic;
 Result = zeros(size(testdata, 1),length(labels));
 
@@ -154,8 +154,8 @@ for m = 1 : Max_Iter
 end
 
 [max_a,ResultR]=max(Result,[],2);
-ResultR0=ResultR;
+predictResults=ResultR;
 for j=1:length(labels)
-    ResultR0(find(ResultR==j))= labels(j);
+    predictResults(find(ResultR==j))= labels(j);
 end      
-time2=toc;
+testTime=toc;

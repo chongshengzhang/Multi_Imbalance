@@ -18,7 +18,7 @@
 % You should have received a copy of the GNU General Public License along with this program. 
 % If not, see <http://www.gnu.org/licenses/>.
 
-function [time1,time2,prelabel] = imECOC(traindata,trainlabel,testdata,type,withw)
+function [trainTime,testTime,prelabel] = imECOC(traindata,trainlabel,testdata,type,withw)
 
 tic;
 
@@ -30,7 +30,7 @@ if withw==0
     W(1:length(ft))=1;
 end
 
-time1=toc;
+trainTime=toc;
 
 tic;
 
@@ -44,4 +44,4 @@ for i=1:length(pre)
 end
 
 prelabel= prelabel';
-time2=toc;
+testTime=toc;

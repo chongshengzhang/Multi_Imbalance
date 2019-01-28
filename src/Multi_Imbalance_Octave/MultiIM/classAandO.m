@@ -17,7 +17,7 @@
 %
 % You should have received a copy of the GNU General Public License along with this program. 
 % If not, see <http://www.gnu.org/licenses/>.
-function [time1,time2,pre00] = classAandO(traindata,trainlabel,testdata)
+function [trainTime,testTime,preResult] = classAandO(traindata,trainlabel,testdata)
 tic;
 %%%%%%%%%%%OVA
 labels = unique (trainlabel);
@@ -77,7 +77,7 @@ end
 
 
 
-time1=toc;
+trainTime=toc;
 
 tic;
 
@@ -104,11 +104,11 @@ for i=1:numbertest
     [b,index]=sort(yall);
     if index(1)<index(2)
         
-        pre00(i)=CO{index(1),index(2)}(i);
+        preResult(i)=CO{index(1),index(2)}(i);
     else
-        pre00(i)=CO{index(2),index(1)}(i);
+        preResult(i)=CO{index(2),index(1)}(i);
     end
 end
 
 
-time2=toc;
+testTime=toc;

@@ -17,7 +17,7 @@
 %
 % You should have received a copy of the GNU General Public License along with this program. 
 % If not, see <http://www.gnu.org/licenses/>.
-function [time1,time2,pre0] = classOAHO(train,testdata)
+function [trainTime,testTime,preResult] = classOAHO(train,testdata)
 tic;
 TABLE = tabulate(train(:,end));
 idxt=find(TABLE(:,2)>0);
@@ -49,18 +49,18 @@ for i=numberc:-1:2
 %     C{flagc}=Cbest;
     flagc=flagc+1;
 end
-time1=toc;
+trainTime=toc;
 
 tic;
 numbertest=size(testdata,1);
 
 for i=1:numbertest
     for j=1:size(pre,2)
-            pre0(i) = pre(i,j);%%%%%%%%%%%%%%%%%%pre
-            if pre0(i)==TABLE(index(numberc-j+1),1)
+            preResult(i) = pre(i,j);%%%%%%%%%%%%%%%%%%pre
+            if preResult(i)==TABLE(index(numberc-j+1),1)
                 break;
             end
     end
 end
-time2=toc;
+testTime=toc;
 
