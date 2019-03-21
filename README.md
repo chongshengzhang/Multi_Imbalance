@@ -8,6 +8,18 @@
 **The detailed documentation of Multi_Imbalance is available at  https://github.com/chongshengzhang/Multi_Imbalance/blob/master/doc/User_manual_Matlab.pdf and https://github.com/chongshengzhang/Multi_Imbalance/blob/master/doc/User_manual_Octave.pdf. The documentation describes the principles and usage of algorithms in Multi_Imbalance. We recommend readers to use the above documentaion as the primary reference.**
  
  <br />
+ Please cite our papers, in case you find our work useful.
+ 
+ 
+ (1) Chongsheng Zhang, Jingjun Bi, Shixin Xu, et al.:
+     Multi-Imbalance: An open-source software for multi-class imbalance learning. Knowledge-Based Systems, 2019. 
+     DOI: https://doi.org/10.1016/j.knosys.2019.03.001
+ 
+ (2) Jingjun Bi, Chongsheng Zhang:
+     An empirical comparison on state-of-the-art multi-class imbalance learning algorithms and a new diversified ensemble learning scheme. Knowledge-Based Systems, 2018,  158: 81-93.
+     
+     These two papers are under the doc folder. 
+
 In the following, we also provide a brief user manual for this software.
 
 # (1) Installation
